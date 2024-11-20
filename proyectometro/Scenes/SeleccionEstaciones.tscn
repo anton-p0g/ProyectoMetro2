@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bk63wmtlleaop"]
+[gd_scene load_steps=33 format=3 uid="uid://bk63wmtlleaop"]
 
 [ext_resource type="Script" path="res://Scripts/Gui/mostrar_estaciones_origen_destino.gd" id="1_31r6i"]
 [ext_resource type="Script" path="res://Scripts/Gui/custom_cursor.gd" id="1_e8mij"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://drgafcl8emknt" path="res://Assets/routes/lineaD.jpeg" id="14_r8cj4"]
 [ext_resource type="Texture2D" uid="uid://bsr0w6ytalsbw" path="res://Assets/routes/lineaE.jpeg" id="15_7scxj"]
 [ext_resource type="Script" path="res://Scripts/seleccionar_hora.gd" id="18_jkmt0"]
+[ext_resource type="Script" path="res://Scenes/mostrar_mas_info.gd" id="22_sdhc7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8s5rr"]
 
@@ -38,6 +39,17 @@ texture = ExtResource("6_55l7p")
 
 [sub_resource type="LabelSettings" id="LabelSettings_qd6w7"]
 font_size = 40
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3l8ml"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vgwe7"]
+texture = ExtResource("4_y3doi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ur4ho"]
+texture = ExtResource("5_dkicf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iayxd"]
+texture = ExtResource("6_55l7p")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -1815,6 +1827,40 @@ layout_mode = 2
 [node name="Spinbox_Minutos" type="SpinBox" parent="SeleccionarHora/VBoxContainer"]
 layout_mode = 2
 
+[node name="MasInfo" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.027
+anchor_right = 0.031
+offset_left = 289.896
+offset_top = 520.0
+offset_right = 351.288
+offset_bottom = 580.0
+theme_override_colors/font_hover_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3l8ml")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vgwe7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ur4ho")
+theme_override_styles/normal = SubResource("StyleBoxTexture_iayxd")
+text = "+"
+
+[node name="MostrarMasInfo" type="Window" parent="."]
+title = "Mas información acerca del trayecto"
+initial_position = 1
+size = Vector2i(400, 500)
+visible = false
+theme_override_fonts/title_font = ExtResource("3_kavc7")
+script = ExtResource("22_sdhc7")
+
+[node name="ColorRect2" type="ColorRect" parent="MostrarMasInfo"]
+custom_minimum_size = Vector2(400, 500)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.298039, 0.388235, 0.537255, 1)
+
 [connection signal="item_selected" from="NodoRuta/SeleccionarRuta/Origen/listaEstaciones" to="NodoRuta" method="_on_lista_estaciones_item_selected"]
 [connection signal="item_selected" from="NodoRuta/SeleccionarRuta/Destino/listaEstaciones" to="NodoRuta" method="_on_lista_estaciones_item_selected"]
 [connection signal="mouse_entered" from="Mapa/lineaA/estaciones/Control" to="Mapa/lineaA/estaciones/Control" method="_on_control_51_mouse_entered"]
@@ -1885,3 +1931,4 @@ layout_mode = 2
 [connection signal="mouse_exited" from="Mapa/lineaE/estaciones/Control6" to="Mapa/lineaE/estaciones/Control6" method="_on_control_51_mouse_exited"]
 [connection signal="mouse_entered" from="Mapa/lineaE/estaciones/Control" to="Mapa/lineaE/estaciones/Control" method="_on_control_51_mouse_entered"]
 [connection signal="mouse_exited" from="Mapa/lineaE/estaciones/Control" to="Mapa/lineaE/estaciones/Control" method="_on_control_51_mouse_exited"]
+[connection signal="close_requested" from="MostrarMasInfo" to="." method="_on_mostrar_mas_info_close_requested"]

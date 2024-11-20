@@ -49,9 +49,12 @@ func load_scene() -> void:
 	$"Mapa/conexiones/156",
 	$"Mapa/conexiones/132",
 ]
+@onready var mas_button = $MasInfo
+@onready var pop_up = $MostrarMasInfo
 
 func _ready() -> void:
 	$NodoRuta/CalcularRuta.connect("pressed", Callable(self, "_button_combined"))
+	mas_button.connect("pressed", Callable(self, "_show_pop_up_window"))
 
 func on_calcular_ruta_button_pressed():
 	var origen = $NodoRuta/SeleccionarRuta/Origen/listaEstaciones
@@ -103,5 +106,14 @@ func _button_combined():
 	var id_path = GlobalData.path_ids
 	var lista_aristas = make_arist(id_path)
 	desocultar(lista_aristas)
+	_show_button_mas_info()
 		
 	
+func _show_button_mas_info():
+	mas_button.visible = true
+	
+func _show_pop_up_window():
+	pop_up.visible = true
+	
+func _on_mostrar_mas_info_close_requested() -> void:
+	pop_up.hide()
