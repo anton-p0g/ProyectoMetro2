@@ -4,33 +4,43 @@ func get_python_path() -> String:
 	var command = "where" if OS.get_name() == "Windows" else "which"
 	var result = []
 	var res = OS.execute(command, ["python"], result, true)
+	print("result", result)
+	
+	var regex = RegEx.new()
+	regex.compile("\\S+")
+	var results = Array()
+	for element in regex.search_all(result[0]):
+		results.append(element.get_string())
+	print(results)
 	
 	if res == 0 and result.size() > 0:
 		return result[0].strip_edges()
 	else:
+		print("Error: Unable to find Python executable.")
 		return ""
 	
 	
-func run_python_script(source_id, target_id):
+func run_python_script(source_id, target_id, day, hour, minute):
 	var python_path = get_python_path()
-	print(python_path)
+	print("path", python_path)
 	if python_path == "":
-		print("Error: Unable to find Python executable.")
 		return
 		
 	var output = []
 	var python_file = ProjectSettings.globalize_path("res://Scripts/backend.py")
-	var result = OS.execute(python_path, [python_file, str(source_id), str(target_id)], output, true, false)
+	var result = OS.execute(python_path, [python_file, str(source_id), str(target_id), str(day), str(hour), str(minute)], output, true, false)
 	
 	if result == 0:
 		var parsedOutput = JSON.parse_string(output[0])
 		
 		GlobalData.path = parsedOutput["estaciones_path"]
 		print(GlobalData.path)
-		GlobalData.total_time = parsedOutput["time"]
-		print(GlobalData.total_time)
+		GlobalData.travel_duration = parsedOutput["travel_duration"]
+		print(GlobalData.travel_duration)
 		GlobalData.path_ids = parsedOutput["path_ids"]
 		print(GlobalData.path_ids)
+		GlobalData.arrival_time = parsedOutput["arrival_time"]
+		print(GlobalData.arrival_time)
 		
 	else:
 		print("Error running Python script:", result)

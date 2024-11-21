@@ -2,7 +2,7 @@ import networkx as nx
 from math import radians, sin, cos, sqrt, atan2
 import json
 import sys
-
+from datetime import datetime, timedelta
 
 
 
@@ -111,27 +111,35 @@ def heuristic_metro_stations(current, destination, velocidad_media = 0.833333333
 
 def main():
 
-	if len(sys.argv) != 3:
-		print(f"Number of arguments passed: {len(sys.argv)} - expected 2 arguments.")
+	if len(sys.argv) != 6:
+		print(f"Number of arguments passed: {len(sys.argv)} - expected 6 arguments.")
 		sys.exit(1)
 
 	source_id = int(sys.argv[1])
 	target_id = int(sys.argv[2])
+	day = int(sys.argv[3])
+	hour = int(sys.argv[4])
+	minute = int(sys.argv[5])
 
 	metro = nx.Graph()
 	add_metro_network(metro)
 
 	path_ids = nx.astar_path(metro, source_id, target_id, heuristic_metro_stations, weight="weight")
-	tiempo_path = nx.astar_path_length(metro, source_id, target_id, heuristic_metro_stations)
+	travel_duration_minutes = nx.astar_path_length(metro, source_id, target_id, heuristic_metro_stations)
 
 	path_nombres = []
 	for elem in path_ids:
 		path_nombres.append(dict_estaciones[elem]["name"])
 
+	current_time = datetime(year=2024, month=1, day=1, hour=hour, minute=minute)
+	travel_duration = timedelta(minutes=travel_duration_minutes)
+	arrival_time = current_time + travel_duration
+
 	output = {
 		"estaciones_path": path_nombres,
 		"path_ids": path_ids,
-		"time": tiempo_path
+		"travel_duration": travel_duration_minutes,
+		"arrival_time": arrival_time.strftime("%H:%M")
 	}
 	print(json.dumps(output))
 

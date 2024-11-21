@@ -1,8 +1,8 @@
 extends VBoxContainer
 
 @onready var day_selector = $SeleccionDia
-@onready var hour_selector = $HoraTexto/VBoxContainer/Spinbox_Hora
-@onready var minute_selector = $HoraTexto/VBoxContainer/Spinbox_Minutos
+@onready var hour_selector = $VBoxContainer/Spinbox_Hora
+@onready var minute_selector = $VBoxContainer/Spinbox_Minutos
 
 func _ready() -> void:
 	var days = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
@@ -24,7 +24,7 @@ func _set_defaults():
 	
 	day_selector.select(current_day - 1)
 	_update_hour_limits(current_day)
-	
+		
 	if current_hour < hour_selector.min_value:
 		current_hour = hour_selector.min_value
 		current_minute = max(30, current_minute)

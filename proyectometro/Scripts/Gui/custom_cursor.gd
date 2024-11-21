@@ -1,11 +1,13 @@
 extends Control
 
-var _default = load("res://Sprites/Mouse/pointer_c_shaded.png")
-var _point = load("res://Sprites/Mouse/hand_point.png")
-var _grab = load("res://Sprites/Mouse/hand_closed.png")
+var _default = load("res://Assets/Sprites/Mouse/pointer_c_shaded.png")
+var _point = load("res://Assets/Sprites/Mouse/hand_point.png")
+var _grab = load("res://Assets/Sprites/Mouse/hand_closed.png")
+var _disabled = load("res://Assets/Sprites/Mouse/disabled.png")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.set_custom_mouse_cursor(_point, Input.CURSOR_POINTING_HAND)
+	Input.set_custom_mouse_cursor(_disabled, Input.CURSOR_FORBIDDEN)
 	
 
 func _input(event) -> void:

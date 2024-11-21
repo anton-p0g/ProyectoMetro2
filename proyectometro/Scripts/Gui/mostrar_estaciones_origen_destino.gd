@@ -29,7 +29,7 @@ func load_scene() -> void:
 	$"Mapa/conexiones/1892",
 	$"Mapa/conexiones/1980",
 	$"Mapa/conexiones/992",
-	$"Mapa/conexiones/1057",
+	$"Mapa/conexiones/1056",
 	$"Mapa/conexiones/1122",
 	$"Mapa/conexiones/1190",
 	$"Mapa/conexiones/1260",
@@ -49,26 +49,30 @@ func load_scene() -> void:
 	$"Mapa/conexiones/156",
 	$"Mapa/conexiones/132",
 ]
-@onready var mas_info = $MasInfo
-@onready var pop_up = $DisplayMasInfo
+@onready var mas_button = $MasInfo
+@onready var pop_up = $MostrarMasInfo
 
 func _ready() -> void:
-<<<<<<< Updated upstream
-	$CalcularRuta.connect("pressed", Callable(self, "_button_combined"))
-=======
 	$NodoRuta/CalcularRuta.connect("pressed", Callable(self, "_button_combined"))
-	$MasInfo.connect("pressed", Callable(self, "_display_mas_info"))
->>>>>>> Stashed changes
+	mas_button.connect("pressed", Callable(self, "_show_pop_up_window"))
 
 func on_calcular_ruta_button_pressed():
-	var origen = $SeleccionarRuta/Origen/listaEstaciones
-	var destino = $SeleccionarRuta/Destino/listaEstaciones
+	var origen = $NodoRuta/SeleccionarRuta/Origen/listaEstaciones
+	var destino = $NodoRuta/SeleccionarRuta/Destino/listaEstaciones
 	
 	var id_origen = origen.get_selected_id()
 	var id_destino = destino.get_selected_id()
 	
+	var day_selector = $SeleccionarHora/SeleccionDia
+	var hour_selector = $SeleccionarHora/VBoxContainer/Spinbox_Hora
+	var minute_selector = $SeleccionarHora/VBoxContainer/Spinbox_Minutos
+	
+	var selected_day = day_selector.get_selected_id() + 1  # Convert to 1-based index
+	var selected_hour = hour_selector.value
+	var selected_minute = minute_selector.value
+	
 	var python_call = preload("res://Scripts/python_call.gd").new()
-	python_call.run_python_script(id_origen, id_destino)
+	python_call.run_python_script(id_origen, id_destino, selected_day, selected_hour, selected_minute)
 	
 
 func make_arist(list_stations_id: Array) -> Array:
@@ -91,25 +95,24 @@ func desocultar(lista_aristas):
 	for arista in lista_aristas:
 		var nodo = get_node(arista)
 		nodo.visible = true
-		await get_tree().create_timer(1).timeout
 
 
 func _button_combined():
 	_on_button_pressed()
 	on_calcular_ruta_button_pressed()
 	var ruta = GlobalData.path
-	var tiempo = GlobalData.total_time
+	var tiempo = GlobalData.travel_duration
 	var id_path = GlobalData.path_ids
 	var lista_aristas = make_arist(id_path)
 	desocultar(lista_aristas)
-	_show_mas_info()
+	_show_button_mas_info()
 		
-func _show_mas_info():
-	mas_info.visible = true
 	
-func _display_mas_info():
-	pop_up.show()
-
-
-func _on_display_mas_info_close_requested() -> void:
+func _show_button_mas_info():
+	mas_button.visible = true
+	
+func _show_pop_up_window():
+	pop_up.visible = true
+	
+func _on_mostrar_mas_info_close_requested() -> void:
 	pop_up.hide()

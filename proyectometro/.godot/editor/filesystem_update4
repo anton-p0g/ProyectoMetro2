@@ -1,12 +1,4 @@
 res://Scenes/Gui/StartMenuScreen.tscn
 res://Scenes/SeleccionEstaciones.tscn
-res://Scenes/Gui/Transition/Test.tscn
-res://Scenes/Gui/Transition/test.gd
-res://Scenes/mapa.tscn
-res://Scripts/GlobalData.gd
-res://Scripts/Gui/join_menu_screen.gd
-res://Scripts/Gui/mostrar_estaciones_origen_destino.gd
-res://Scripts/python_call.gd
-res://Scripts/Gui/start_menu.gd
-res://Scenes/Gui/Transition/transition.gd
 res://Scenes/Gui/GeneradorPNG/Test.tscn
+res://Scenes/mapa.tscn

@@ -1,28 +1,32 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=22 format=3 uid="uid://bk63wmtlleaop"]
-=======
-[gd_scene load_steps=30 format=3 uid="uid://bk63wmtlleaop"]
->>>>>>> Stashed changes
+[gd_scene load_steps=33 format=3 uid="uid://bk63wmtlleaop"]
 
 [ext_resource type="Script" path="res://Scripts/Gui/mostrar_estaciones_origen_destino.gd" id="1_31r6i"]
 [ext_resource type="Script" path="res://Scripts/Gui/custom_cursor.gd" id="1_e8mij"]
 [ext_resource type="Script" path="res://Scripts/Gui/lista_estaciones.gd" id="2_1nfwg"]
+[ext_resource type="Script" path="res://Scripts/Rutas/nodo_ruta.gd" id="3_62o8g"]
 [ext_resource type="FontFile" uid="uid://b0emhowcce23p" path="res://Assets/Fonts/Roboto_Slab/static/RobotoSlab-ExtraBold.ttf" id="3_kavc7"]
 [ext_resource type="Texture2D" uid="uid://cnnw1tgr5p1rl" path="res://Assets/Sprites/Buttons/button_rectangle.png" id="4_y3doi"]
 [ext_resource type="Texture2D" uid="uid://cy52fy0vy8rpr" path="res://Assets/Sprites/Buttons/panel_rectangle_screws.png" id="5_dkicf"]
 [ext_resource type="Texture2D" uid="uid://cm4ag881lmh61" path="res://Assets/Sprites/Buttons/button_rectangle_depth.png" id="6_55l7p"]
 [ext_resource type="Texture2D" uid="uid://b4uboswskfatp" path="res://Assets/Sprites/Subte-logo.svg" id="8_bsq8l"]
 [ext_resource type="Texture2D" uid="uid://b1m5hgmjg7qn4" path="res://Assets/routes/map.png" id="9_1t8yq"]
+[ext_resource type="FontFile" uid="uid://c7xhnbmlovubs" path="res://Assets/Fonts/Roboto_Slab/static/RobotoSlab-Black.ttf" id="9_y13ai"]
 [ext_resource type="PackedScene" uid="uid://dmh5cvmnge2it" path="res://Scenes/Gui/mapa/estación.tscn" id="10_7uol4"]
 [ext_resource type="Texture2D" uid="uid://dimqkv6emw57i" path="res://Assets/routes/lineaA.jpeg" id="11_26jix"]
 [ext_resource type="Texture2D" uid="uid://wl5vxq4jtsu" path="res://Assets/routes/gris.jpg" id="11_d3qc0"]
 [ext_resource type="Texture2D" uid="uid://cq8nusa8ravxi" path="res://Assets/routes/lineaB.png" id="12_0cb10"]
+[ext_resource type="Script" path="res://Scripts/Gui/hover.gd" id="13_bidhf"]
 [ext_resource type="Texture2D" uid="uid://c3jhsigjindeo" path="res://Assets/routes/transbordo3.png" id="13_lf1x3"]
 [ext_resource type="Texture2D" uid="uid://yf5fwu8l6w3" path="res://Assets/routes/lineaC.jpeg" id="13_uiy4y"]
 [ext_resource type="Texture2D" uid="uid://drgafcl8emknt" path="res://Assets/routes/lineaD.jpeg" id="14_r8cj4"]
 [ext_resource type="Texture2D" uid="uid://bsr0w6ytalsbw" path="res://Assets/routes/lineaE.jpeg" id="15_7scxj"]
+[ext_resource type="Script" path="res://Scripts/seleccionar_hora.gd" id="18_jkmt0"]
+[ext_resource type="Script" path="res://Scenes/mostrar_mas_info.gd" id="22_sdhc7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8s5rr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8x7t5"]
+texture = ExtResource("5_dkicf")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m1urt"]
 texture = ExtResource("4_y3doi")
@@ -33,15 +37,18 @@ texture = ExtResource("5_dkicf")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5qosc"]
 texture = ExtResource("6_55l7p")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_77j6n"]
+[sub_resource type="LabelSettings" id="LabelSettings_qd6w7"]
+font_size = 40
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0yx2n"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3l8ml"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vgwe7"]
 texture = ExtResource("4_y3doi")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t1ouc"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ur4ho"]
 texture = ExtResource("5_dkicf")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_if7n2"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iayxd"]
 texture = ExtResource("6_55l7p")
 
 [node name="Control" type="Control"]
@@ -69,41 +76,56 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.299211, 0.388755, 0.536115, 1)
 
-[node name="SeleccionarRuta" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 60.0
-offset_top = 177.0
-offset_right = 346.0
-offset_bottom = 280.0
+[node name="NodoRuta" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 0.347
+anchor_bottom = 1.0
+offset_right = 0.255981
+script = ExtResource("3_62o8g")
 
-[node name="Origen" type="VBoxContainer" parent="SeleccionarRuta"]
+[node name="SeleccionarRuta" type="VBoxContainer" parent="NodoRuta"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.273
+anchor_right = 0.865
+anchor_bottom = 0.432
+offset_top = 0.095993
+offset_right = -3.05176e-05
+offset_bottom = 0.0639954
+
+[node name="Origen" type="VBoxContainer" parent="NodoRuta/SeleccionarRuta"]
 layout_mode = 2
 script = ExtResource("2_1nfwg")
 
-[node name="LabelEstacionOrigen" type="Label" parent="SeleccionarRuta/Origen"]
+[node name="LabelEstacionOrigen" type="Label" parent="NodoRuta/SeleccionarRuta/Origen"]
 layout_mode = 2
 text = "Seleccione la estación de origen:"
 
-[node name="listaEstaciones" type="OptionButton" parent="SeleccionarRuta/Origen"]
+[node name="listaEstaciones" type="OptionButton" parent="NodoRuta/SeleccionarRuta/Origen"]
 layout_mode = 2
 
-[node name="Destino" type="VBoxContainer" parent="SeleccionarRuta"]
+[node name="Destino" type="VBoxContainer" parent="NodoRuta/SeleccionarRuta"]
 layout_mode = 2
 script = ExtResource("2_1nfwg")
 
-[node name="LabelEstacionDestino" type="Label" parent="SeleccionarRuta/Destino"]
+[node name="LabelEstacionDestino" type="Label" parent="NodoRuta/SeleccionarRuta/Destino"]
 layout_mode = 2
 text = "Seleccione la estación de destino:"
 
-[node name="listaEstaciones" type="OptionButton" parent="SeleccionarRuta/Destino"]
+[node name="listaEstaciones" type="OptionButton" parent="NodoRuta/SeleccionarRuta/Destino"]
 layout_mode = 2
 
-[node name="CalcularRuta" type="Button" parent="."]
-layout_mode = 2
-offset_left = 60.0
-offset_top = 332.0
-offset_right = 346.0
-offset_bottom = 379.0
+[node name="CalcularRuta" type="Button" parent="NodoRuta"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.466
+anchor_right = 0.865
+anchor_bottom = 0.552
+offset_top = 0.0319824
+offset_right = -3.05176e-05
+offset_bottom = 0.303955
 size_flags_vertical = 3
 mouse_default_cursor_shape = 2
 theme_override_colors/font_hover_color = Color(0.270588, 0.270588, 0.270588, 1)
@@ -112,10 +134,28 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_kavc7")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8s5rr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_8x7t5")
 theme_override_styles/hover = SubResource("StyleBoxTexture_m1urt")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_l3kuy")
 theme_override_styles/normal = SubResource("StyleBoxTexture_5qosc")
 text = "Calcular ruta"
+
+[node name="AvisoMismasEstaciones" type="Label" parent="NodoRuta"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.157
+anchor_top = 0.557
+anchor_right = 0.865
+anchor_bottom = 0.593
+offset_left = 0.199997
+offset_top = 0.0639648
+offset_right = -3.05176e-05
+offset_bottom = -0.264038
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("9_y13ai")
+text = "Elija un origen y destino distinto"
 
 [node name="Logo" type="TextureRect" parent="."]
 layout_mode = 1
@@ -179,6 +219,214 @@ position = Vector2(769, 592)
 z_index = 5
 position = Vector2(858, 638)
 
+[node name="Control" type="Control" parent="Mapa/lineaA/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -31.2501
+offset_top = 270.588
+offset_right = -6.25005
+offset_bottom = 293.588
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaA/estaciones/Control"]
+z_index = 7
+layout_mode = 0
+offset_left = -150.0
+offset_top = 33.0
+offset_right = 13.0
+offset_bottom = 98.0
+
+[node name="Label" type="Label" parent="Mapa/lineaA/estaciones/Control/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Alberti"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control2" type="Control" parent="Mapa/lineaA/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 50.0
+offset_top = 298.039
+offset_right = 75.0
+offset_bottom = 321.039
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaA/estaciones/Control2"]
+z_index = 7
+layout_mode = 0
+offset_left = -125.0
+offset_top = 37.2549
+offset_right = 17.0
+offset_bottom = 102.255
+
+[node name="Label" type="Label" parent="Mapa/lineaA/estaciones/Control2/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Pasco"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control3" type="Control" parent="Mapa/lineaA/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 220.833
+offset_top = 362.745
+offset_right = 245.833
+offset_bottom = 385.745
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaA/estaciones/Control3"]
+z_index = 7
+layout_mode = 0
+offset_left = -191.667
+offset_top = 21.5686
+offset_right = 18.3333
+offset_bottom = 86.5686
+
+[node name="Label" type="Label" parent="Mapa/lineaA/estaciones/Control3/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Congreso"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control4" type="Control" parent="Mapa/lineaA/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 385.0
+offset_top = 445.0
+offset_right = 413.0
+offset_bottom = 470.0
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaA/estaciones/Control4"]
+z_index = 7
+layout_mode = 0
+offset_left = -249.583
+offset_top = 19.7059
+offset_right = -1.58337
+offset_bottom = 84.7059
+
+[node name="Label" type="Label" parent="Mapa/lineaA/estaciones/Control4/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Saenz Peña"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control5" type="Control" parent="Mapa/lineaA/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 514.583
+offset_top = 490.196
+offset_right = 542.583
+offset_bottom = 515.196
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaA/estaciones/Control5"]
+z_index = 7
+layout_mode = 0
+offset_left = -122.917
+offset_top = 15.6863
+offset_right = 2.08333
+offset_bottom = 80.6862
+
+[node name="Label" type="Label" parent="Mapa/lineaA/estaciones/Control5/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Lima"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control6" type="Control" parent="Mapa/lineaA/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 635.417
+offset_top = 535.294
+offset_right = 663.417
+offset_bottom = 560.294
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaA/estaciones/Control6"]
+z_index = 7
+layout_mode = 0
+offset_left = -158.333
+offset_top = 27.451
+offset_right = 18.6666
+offset_bottom = 92.451
+
+[node name="Label" type="Label" parent="Mapa/lineaA/estaciones/Control6/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Piedras"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control7" type="Control" parent="Mapa/lineaA/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 754.167
+offset_top = 580.392
+offset_right = 782.167
+offset_bottom = 605.392
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaA/estaciones/Control7"]
+z_index = 7
+layout_mode = 0
+offset_left = -127.083
+offset_top = 15.6863
+offset_right = -4.0834
+offset_bottom = 80.6863
+
+[node name="Label" type="Label" parent="Mapa/lineaA/estaciones/Control7/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Perú"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control8" type="Control" parent="Mapa/lineaA/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 843.75
+offset_top = 625.49
+offset_right = 871.75
+offset_bottom = 650.49
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaA/estaciones/Control8"]
+z_index = 7
+layout_mode = 0
+offset_left = 12.0
+offset_top = -67.0
+offset_right = 317.0
+offset_bottom = -2.0
+
+[node name="Label" type="Label" parent="Mapa/lineaA/estaciones/Control8/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Plaza de Mayo"
+label_settings = SubResource("LabelSettings_qd6w7")
+
 [node name="lineaB" type="Node2D" parent="Mapa"]
 
 [node name="estaciones" type="Node2D" parent="Mapa/lineaB"]
@@ -206,6 +454,160 @@ position = Vector2(860, 407)
 [node name="21" parent="Mapa/lineaB/estaciones" instance=ExtResource("10_7uol4")]
 z_index = 5
 position = Vector2(1007, 463)
+
+[node name="Control" type="Control" parent="Mapa/lineaB/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 993.75
+offset_top = 450.98
+offset_right = 1018.75
+offset_bottom = 473.98
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaB/estaciones/Control"]
+layout_mode = 0
+offset_left = -40.0
+offset_top = 41.0
+offset_right = 320.0
+offset_bottom = 106.0
+
+[node name="Label" type="Label" parent="Mapa/lineaB/estaciones/Control/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Leandro N. Alem."
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control2" type="Control" parent="Mapa/lineaB/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 847.917
+offset_top = 396.078
+offset_right = 872.917
+offset_bottom = 419.078
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaB/estaciones/Control2"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = -71.0
+offset_right = 182.0
+offset_bottom = -6.0
+
+[node name="Label" type="Label" parent="Mapa/lineaB/estaciones/Control2/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Florida"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control3" type="Control" parent="Mapa/lineaB/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 635.417
+offset_top = 315.686
+offset_right = 660.417
+offset_bottom = 338.686
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaB/estaciones/Control3"]
+z_index = 7
+layout_mode = 0
+offset_left = 17.0
+offset_top = -71.0
+offset_right = 358.0
+offset_bottom = -6.0
+
+[node name="Label" type="Label" parent="Mapa/lineaB/estaciones/Control3/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Carlos Pellegrini"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control4" type="Control" parent="Mapa/lineaB/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 481.25
+offset_top = 258.824
+offset_right = 506.25
+offset_bottom = 281.824
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaB/estaciones/Control4"]
+z_index = 7
+layout_mode = 0
+offset_left = -189.583
+offset_top = 25.4902
+offset_right = 8.4167
+offset_bottom = 90.4902
+
+[node name="Label" type="Label" parent="Mapa/lineaB/estaciones/Control4/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Uruguay"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control5" type="Control" parent="Mapa/lineaB/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 310.417
+offset_top = 196.078
+offset_right = 335.417
+offset_bottom = 219.078
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaB/estaciones/Control5"]
+z_index = 7
+layout_mode = 0
+offset_left = -141.667
+offset_top = 25.4902
+offset_right = 8.33334
+offset_bottom = 90.4902
+
+[node name="Label" type="Label" parent="Mapa/lineaB/estaciones/Control5/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Callao"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control6" type="Control" parent="Mapa/lineaB/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 97.9166
+offset_top = 107.843
+offset_right = 122.917
+offset_bottom = 130.843
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaB/estaciones/Control6"]
+z_index = 7
+layout_mode = 0
+offset_left = -150.0
+offset_top = 33.3333
+offset_right = 25.0
+offset_bottom = 98.3333
+
+[node name="Label" type="Label" parent="Mapa/lineaB/estaciones/Control6/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Pasteur"
+label_settings = SubResource("LabelSettings_qd6w7")
 
 [node name="lineaC" type="Node2D" parent="Mapa"]
 
@@ -247,6 +649,232 @@ position = Vector2(449, 851)
 z_index = 5
 position = Vector2(534, 643)
 
+[node name="Control2" type="Control" parent="Mapa/lineaC/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 375.0
+offset_top = 990.196
+offset_right = 400.0
+offset_bottom = 1013.2
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaC/estaciones/Control2"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 4.0
+offset_right = 231.0
+offset_bottom = 69.0
+
+[node name="Label" type="Label" parent="Mapa/lineaC/estaciones/Control2/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "San Juan"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control3" type="Control" parent="Mapa/lineaC/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 252.083
+offset_top = 1150.98
+offset_right = 277.083
+offset_bottom = 1173.98
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaC/estaciones/Control3"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = -53.0
+offset_right = 340.0
+offset_bottom = 12.0
+
+[node name="Label" type="Label" parent="Mapa/lineaC/estaciones/Control3/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Constitución"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control4" type="Control" parent="Mapa/lineaC/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 520.833
+offset_top = 629.412
+offset_right = 545.833
+offset_bottom = 652.412
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaC/estaciones/Control4"]
+layout_mode = 0
+offset_left = -195.833
+offset_top = -50.9804
+offset_right = -14.8334
+offset_bottom = 14.0196
+
+[node name="Label" type="Label" parent="Mapa/lineaC/estaciones/Control4/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Moreno"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control5" type="Control" parent="Mapa/lineaC/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 575.0
+offset_top = 513.726
+offset_right = 600.0
+offset_bottom = 536.726
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaC/estaciones/Control5"]
+layout_mode = 0
+offset_left = -393.75
+offset_top = 13.7255
+offset_right = -33.75
+offset_bottom = 78.7255
+
+[node name="Label" type="Label" parent="Mapa/lineaC/estaciones/Control5/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Avenida de Mayo"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control6" type="Control" parent="Mapa/lineaC/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 687.5
+offset_top = 388.235
+offset_right = 712.5
+offset_bottom = 411.235
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaC/estaciones/Control6"]
+z_index = 6
+layout_mode = 0
+offset_left = -75.0
+offset_top = 47.0
+offset_right = 246.0
+offset_bottom = 112.0
+
+[node name="Label" type="Label" parent="Mapa/lineaC/estaciones/Control6/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Diagonal Norte"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control7" type="Control" parent="Mapa/lineaC/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 760.417
+offset_top = 296.078
+offset_right = 785.417
+offset_bottom = 319.078
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaC/estaciones/Control7"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 4.0
+offset_right = 198.0
+offset_bottom = 69.0
+
+[node name="Label" type="Label" parent="Mapa/lineaC/estaciones/Control7/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Lavalle"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control8" type="Control" parent="Mapa/lineaC/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 887.5
+offset_top = 82.3529
+offset_right = 912.5
+offset_bottom = 105.353
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaC/estaciones/Control8"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 18.0
+offset_right = 269.0
+offset_bottom = 83.0
+
+[node name="Label" type="Label" parent="Mapa/lineaC/estaciones/Control8/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "San Martín"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control9" type="Control" parent="Mapa/lineaC/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1022.92
+offset_top = -31.3726
+offset_right = 1047.92
+offset_bottom = -8.37256
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaC/estaciones/Control9"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 18.0
+offset_right = 179.0
+offset_bottom = 83.0
+
+[node name="Label" type="Label" parent="Mapa/lineaC/estaciones/Control9/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Retiro"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control" type="Control" parent="Mapa/lineaC/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 437.5
+offset_top = 839.216
+offset_right = 462.5
+offset_bottom = 862.216
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaC/estaciones/Control"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 4.0
+offset_right = 348.0
+offset_bottom = 69.0
+
+[node name="Label" type="Label" parent="Mapa/lineaC/estaciones/Control/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Independencia"
+label_settings = SubResource("LabelSettings_qd6w7")
+
 [node name="lineaD" type="Node2D" parent="Mapa"]
 
 [node name="estaciones" type="Node2D" parent="Mapa/lineaD"]
@@ -270,6 +898,131 @@ position = Vector2(671, 370)
 [node name="45" parent="Mapa/lineaD/estaciones" instance=ExtResource("10_7uol4")]
 z_index = 5
 position = Vector2(796, 563)
+
+[node name="Control2" type="Control" parent="Mapa/lineaD/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 658.333
+offset_top = 356.863
+offset_right = 683.333
+offset_bottom = 382.863
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaD/estaciones/Control2"]
+layout_mode = 0
+offset_left = -254.167
+offset_top = -23.5294
+offset_right = -50.1667
+offset_bottom = 41.4706
+
+[node name="Label" type="Label" parent="Mapa/lineaD/estaciones/Control2/Panel"]
+layout_mode = 0
+offset_left = 16.5
+offset_top = 3.96085
+offset_right = 216.5
+offset_bottom = 68.9608
+text = "9 de Julio"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control3" type="Control" parent="Mapa/lineaD/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 577.0
+offset_top = 208.0
+offset_right = 600.0
+offset_bottom = 231.0
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaD/estaciones/Control3"]
+layout_mode = 0
+offset_left = -252.0
+offset_top = -80.549
+offset_right = -24.9999
+offset_bottom = -15.549
+
+[node name="Label" type="Label" parent="Mapa/lineaD/estaciones/Control3/Panel"]
+layout_mode = 0
+offset_left = 16.5
+offset_top = 3.96085
+offset_right = 216.5
+offset_bottom = 68.9608
+text = "Tribunales"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control4" type="Control" parent="Mapa/lineaD/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 389.583
+offset_top = 27.451
+offset_right = 412.583
+offset_bottom = 50.451
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaD/estaciones/Control4"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = -57.0
+offset_right = 200.0
+offset_bottom = 8.0
+
+[node name="Label" type="Label" parent="Mapa/lineaD/estaciones/Control4/Panel"]
+layout_mode = 0
+offset_left = 16.5
+offset_top = 3.96085
+offset_right = 216.5
+offset_bottom = 68.9608
+text = "Callao"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control5" type="Control" parent="Mapa/lineaD/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 227.083
+offset_top = -41.1765
+offset_right = 250.083
+offset_bottom = -18.1765
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaD/estaciones/Control5"]
+layout_mode = 0
+offset_left = -420.833
+offset_top = 37.2549
+offset_right = 14.1666
+offset_bottom = 102.255
+
+[node name="Label" type="Label" parent="Mapa/lineaD/estaciones/Control5/Panel"]
+layout_mode = 0
+offset_left = 16.5
+offset_top = 3.96085
+offset_right = 216.5
+offset_bottom = 68.9608
+text = "Facultad de Medicina"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control" type="Control" parent="Mapa/lineaD/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 783.333
+offset_top = 550.98
+offset_right = 808.333
+offset_bottom = 576.98
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaD/estaciones/Control"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = -72.0
+offset_right = 215.0
+offset_bottom = -7.0
+
+[node name="Label" type="Label" parent="Mapa/lineaD/estaciones/Control/Panel"]
+layout_mode = 0
+offset_left = 16.5
+offset_top = 3.96085
+offset_right = 216.5
+offset_bottom = 68.9608
+text = "Catedral"
+label_settings = SubResource("LabelSettings_qd6w7")
 
 [node name="lineaE" type="Node2D" parent="Mapa"]
 
@@ -298,6 +1051,156 @@ position = Vector2(48, 862)
 [node name="51" parent="Mapa/lineaE/estaciones" instance=ExtResource("10_7uol4")]
 z_index = 5
 position = Vector2(-119, 802)
+
+[node name="Control2" type="Control" parent="Mapa/lineaE/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 35.0
+offset_top = 851.0
+offset_right = 60.0
+offset_bottom = 874.0
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaE/estaciones/Control2"]
+layout_mode = 0
+offset_left = 18.5
+offset_top = -72.3529
+offset_right = 241.5
+offset_bottom = -7.35292
+
+[node name="Label" type="Label" parent="Mapa/lineaE/estaciones/Control2/Panel"]
+layout_mode = 0
+offset_left = 16.5
+offset_top = 3.96085
+offset_right = 216.5
+offset_bottom = 68.9608
+text = "Entre Ríos"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control3" type="Control" parent="Mapa/lineaE/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 218.75
+offset_top = 919.608
+offset_right = 243.75
+offset_bottom = 942.608
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaE/estaciones/Control3"]
+layout_mode = 0
+offset_left = -197.917
+offset_top = 25.4902
+offset_right = -5.91666
+offset_bottom = 90.4902
+
+[node name="Label" type="Label" parent="Mapa/lineaE/estaciones/Control3/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "San José"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control4" type="Control" parent="Mapa/lineaE/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 397.917
+offset_top = 823.529
+offset_right = 422.917
+offset_bottom = 846.529
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaE/estaciones/Control4"]
+layout_mode = 0
+offset_left = -300.0
+offset_top = -78.0
+offset_right = 12.0
+offset_bottom = -13.0
+
+[node name="Label" type="Label" parent="Mapa/lineaE/estaciones/Control4/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Independencia"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control5" type="Control" parent="Mapa/lineaE/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 593.75
+offset_top = 692.157
+offset_right = 618.75
+offset_bottom = 715.157
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaE/estaciones/Control5"]
+layout_mode = 0
+offset_left = 27.0833
+offset_top = 23.5293
+offset_right = 227.083
+offset_bottom = 88.5293
+
+[node name="Label" type="Label" parent="Mapa/lineaE/estaciones/Control5/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Belgrano"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control6" type="Control" parent="Mapa/lineaE/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 760.417
+offset_top = 621.569
+offset_right = 785.417
+offset_bottom = 644.569
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaE/estaciones/Control6"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 33.0
+offset_right = 183.0
+offset_bottom = 98.0
+
+[node name="Label" type="Label" parent="Mapa/lineaE/estaciones/Control6/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 69.0
+text = "Bolivar"
+label_settings = SubResource("LabelSettings_qd6w7")
+
+[node name="Control" type="Control" parent="Mapa/lineaE/estaciones"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -131.0
+offset_top = 790.0
+offset_right = -106.0
+offset_bottom = 816.0
+script = ExtResource("13_bidhf")
+
+[node name="Panel" type="Panel" parent="Mapa/lineaE/estaciones/Control"]
+layout_mode = 0
+offset_left = 18.5
+offset_top = -72.3529
+offset_right = 241.5
+offset_bottom = -7.35292
+
+[node name="Label" type="Label" parent="Mapa/lineaE/estaciones/Control/Panel"]
+layout_mode = 0
+offset_left = 16.5
+offset_top = 3.96085
+offset_right = 216.5
+offset_bottom = 68.9608
+text = "Pichincha"
+label_settings = SubResource("LabelSettings_qd6w7")
 
 [node name="grises" type="Node2D" parent="Mapa"]
 
@@ -677,10 +1580,10 @@ rotation = -0.401434
 scale = Vector2(0.41495, 1)
 texture = ExtResource("13_uiy4y")
 
-[node name="1057" type="Node2D" parent="Mapa/conexiones"]
+[node name="1056" type="Node2D" parent="Mapa/conexiones"]
 z_index = 5
 
-[node name="1057" type="Sprite2D" parent="Mapa/conexiones/1057"]
+[node name="1057" type="Sprite2D" parent="Mapa/conexiones/1056"]
 position = Vector2(420, 923)
 rotation = -1.18603
 scale = Vector2(0.812649, 1)
@@ -895,8 +1798,6 @@ position = Vector2(836.847, 631.203)
 rotation = 0.311208
 scale = Vector2(0.26194, 1)
 texture = ExtResource("11_26jix")
-<<<<<<< Updated upstream
-=======
 
 [node name="SeleccionarHora" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -928,51 +1829,106 @@ layout_mode = 2
 
 [node name="MasInfo" type="Button" parent="."]
 visible = false
-layout_mode = 0
-offset_left = 331.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.027
+anchor_right = 0.031
+offset_left = 289.896
 offset_top = 520.0
-offset_right = 389.0
-offset_bottom = 579.0
+offset_right = 351.288
+offset_bottom = 580.0
 theme_override_colors/font_hover_pressed_color = Color(0.270588, 0.270588, 0.270588, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_kavc7")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_77j6n")
-theme_override_styles/hover = SubResource("StyleBoxTexture_0yx2n")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_t1ouc")
-theme_override_styles/normal = SubResource("StyleBoxTexture_if7n2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3l8ml")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vgwe7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ur4ho")
+theme_override_styles/normal = SubResource("StyleBoxTexture_iayxd")
 text = "+"
 
-[node name="DisplayMasInfo" type="Window" parent="."]
-title = "Mas Información acerca del trayecto"
+[node name="MostrarMasInfo" type="Window" parent="."]
+title = "Mas información acerca del trayecto"
 initial_position = 1
 size = Vector2i(400, 500)
 visible = false
-theme_override_colors/title_color = Color(1, 1, 1, 1)
-theme_override_colors/title_outline_modulate = Color(0.929412, 0, 0, 1)
 theme_override_fonts/title_font = ExtResource("3_kavc7")
+script = ExtResource("22_sdhc7")
 
-[node name="ColorRect" type="ColorRect" parent="DisplayMasInfo"]
+[node name="ColorRect2" type="ColorRect" parent="MostrarMasInfo"]
 custom_minimum_size = Vector2(400, 500)
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.298039, 0.388235, 0.537255, 1)
 
-[node name="Tiempo de salida" type="Label" parent="DisplayMasInfo/ColorRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -58.5
-offset_right = 58.5
-offset_bottom = 23.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_kavc7")
-text = "Hora de salida: "
-
 [connection signal="item_selected" from="NodoRuta/SeleccionarRuta/Origen/listaEstaciones" to="NodoRuta" method="_on_lista_estaciones_item_selected"]
 [connection signal="item_selected" from="NodoRuta/SeleccionarRuta/Destino/listaEstaciones" to="NodoRuta" method="_on_lista_estaciones_item_selected"]
-[connection signal="close_requested" from="DisplayMasInfo" to="." method="_on_display_mas_info_close_requested"]
->>>>>>> Stashed changes
+[connection signal="mouse_entered" from="Mapa/lineaA/estaciones/Control" to="Mapa/lineaA/estaciones/Control" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaA/estaciones/Control" to="Mapa/lineaA/estaciones/Control" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaA/estaciones/Control2" to="Mapa/lineaA/estaciones/Control2" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaA/estaciones/Control2" to="Mapa/lineaA/estaciones/Control2" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaA/estaciones/Control3" to="Mapa/lineaA/estaciones/Control3" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaA/estaciones/Control3" to="Mapa/lineaA/estaciones/Control3" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaA/estaciones/Control4" to="Mapa/lineaA/estaciones/Control4" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaA/estaciones/Control4" to="Mapa/lineaA/estaciones/Control4" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaA/estaciones/Control5" to="Mapa/lineaA/estaciones/Control5" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaA/estaciones/Control5" to="Mapa/lineaA/estaciones/Control5" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaA/estaciones/Control6" to="Mapa/lineaA/estaciones/Control6" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaA/estaciones/Control6" to="Mapa/lineaA/estaciones/Control6" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaA/estaciones/Control7" to="Mapa/lineaA/estaciones/Control7" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaA/estaciones/Control7" to="Mapa/lineaA/estaciones/Control7" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaA/estaciones/Control8" to="Mapa/lineaA/estaciones/Control8" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaA/estaciones/Control8" to="Mapa/lineaA/estaciones/Control8" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaB/estaciones/Control" to="Mapa/lineaB/estaciones/Control" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaB/estaciones/Control" to="Mapa/lineaB/estaciones/Control" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaB/estaciones/Control2" to="Mapa/lineaB/estaciones/Control2" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaB/estaciones/Control2" to="Mapa/lineaB/estaciones/Control2" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaB/estaciones/Control3" to="Mapa/lineaB/estaciones/Control3" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaB/estaciones/Control3" to="Mapa/lineaB/estaciones/Control3" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaB/estaciones/Control4" to="Mapa/lineaB/estaciones/Control4" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaB/estaciones/Control4" to="Mapa/lineaB/estaciones/Control4" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaB/estaciones/Control5" to="Mapa/lineaB/estaciones/Control5" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaB/estaciones/Control5" to="Mapa/lineaB/estaciones/Control5" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaB/estaciones/Control6" to="Mapa/lineaB/estaciones/Control6" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaB/estaciones/Control6" to="Mapa/lineaB/estaciones/Control6" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaC/estaciones/Control2" to="Mapa/lineaC/estaciones/Control2" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaC/estaciones/Control2" to="Mapa/lineaC/estaciones/Control2" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaC/estaciones/Control3" to="Mapa/lineaC/estaciones/Control3" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaC/estaciones/Control3" to="Mapa/lineaC/estaciones/Control3" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaC/estaciones/Control4" to="Mapa/lineaC/estaciones/Control4" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaC/estaciones/Control4" to="Mapa/lineaC/estaciones/Control4" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaC/estaciones/Control5" to="Mapa/lineaC/estaciones/Control5" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaC/estaciones/Control5" to="Mapa/lineaC/estaciones/Control5" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaC/estaciones/Control6" to="Mapa/lineaC/estaciones/Control6" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaC/estaciones/Control6" to="Mapa/lineaC/estaciones/Control6" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaC/estaciones/Control7" to="Mapa/lineaC/estaciones/Control7" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaC/estaciones/Control7" to="Mapa/lineaC/estaciones/Control7" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaC/estaciones/Control8" to="Mapa/lineaC/estaciones/Control8" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaC/estaciones/Control8" to="Mapa/lineaC/estaciones/Control8" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaC/estaciones/Control9" to="Mapa/lineaC/estaciones/Control9" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaC/estaciones/Control9" to="Mapa/lineaC/estaciones/Control9" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaC/estaciones/Control" to="Mapa/lineaC/estaciones/Control" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaC/estaciones/Control" to="Mapa/lineaC/estaciones/Control" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaD/estaciones/Control2" to="Mapa/lineaD/estaciones/Control2" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaD/estaciones/Control2" to="Mapa/lineaD/estaciones/Control2" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaD/estaciones/Control3" to="Mapa/lineaD/estaciones/Control3" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaD/estaciones/Control3" to="Mapa/lineaD/estaciones/Control3" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaD/estaciones/Control4" to="Mapa/lineaD/estaciones/Control4" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaD/estaciones/Control4" to="Mapa/lineaD/estaciones/Control4" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaD/estaciones/Control5" to="Mapa/lineaD/estaciones/Control5" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaD/estaciones/Control5" to="Mapa/lineaD/estaciones/Control5" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaD/estaciones/Control" to="Mapa/lineaD/estaciones/Control" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaD/estaciones/Control" to="Mapa/lineaD/estaciones/Control" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaE/estaciones/Control2" to="Mapa/lineaE/estaciones/Control2" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaE/estaciones/Control2" to="Mapa/lineaE/estaciones/Control2" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaE/estaciones/Control3" to="Mapa/lineaE/estaciones/Control3" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaE/estaciones/Control3" to="Mapa/lineaE/estaciones/Control3" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaE/estaciones/Control4" to="Mapa/lineaE/estaciones/Control4" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaE/estaciones/Control4" to="Mapa/lineaE/estaciones/Control4" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaE/estaciones/Control5" to="Mapa/lineaE/estaciones/Control5" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaE/estaciones/Control5" to="Mapa/lineaE/estaciones/Control5" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaE/estaciones/Control6" to="Mapa/lineaE/estaciones/Control6" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaE/estaciones/Control6" to="Mapa/lineaE/estaciones/Control6" method="_on_control_51_mouse_exited"]
+[connection signal="mouse_entered" from="Mapa/lineaE/estaciones/Control" to="Mapa/lineaE/estaciones/Control" method="_on_control_51_mouse_entered"]
+[connection signal="mouse_exited" from="Mapa/lineaE/estaciones/Control" to="Mapa/lineaE/estaciones/Control" method="_on_control_51_mouse_exited"]
+[connection signal="close_requested" from="MostrarMasInfo" to="." method="_on_mostrar_mas_info_close_requested"]

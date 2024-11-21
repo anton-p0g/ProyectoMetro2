@@ -1,11 +1,13 @@
 extends Node
 
 var path = []
-var total_time = 0
+var travel_duration = 0
 var path_ids = []
+var arrival_time = 0
 
 func clear():
 	path = []
-	total_time = 0
+	travel_duration = 0
 	path_ids = []
+	arrival_time = 0
 	

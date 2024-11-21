@@ -1,14 +1,10 @@
-<<<<<<< Updated upstream
-=======
-Label
 ColorRect
-Sprite2D
 Window
 Button
 Control
+Label
+Panel
 Container
 SpinBox
 VBoxContainer
 OptionButton
->>>>>>> Stashed changes
-Panel
