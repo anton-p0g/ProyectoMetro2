@@ -80,13 +80,38 @@ func on_calcular_ruta_button_pressed():
 	
 
 func make_arist(list_stations_id: Array) -> Array:
+	var lista_conjunta = Array()
 	var list_id_arist = Array()
+	var list_id_train_animation = Array()
 	for i in range(len(list_stations_id) - 1):
 		if str(list_stations_id[i])[0] == str(list_stations_id[i + 1])[0]:
 			list_id_arist.append("Mapa/conexiones/" + str(list_stations_id[i] * list_stations_id[i + 1]))
+			if list_stations_id[i] > list_stations_id[i + 1]:
+				var direction_animation = Array()
+				direction_animation.append("Mapa/animacion_metro/" + str(list_stations_id[i] * list_stations_id[i + 1]))
+				direction_animation.append(1)
+				list_id_train_animation.append(direction_animation)
+			else:
+				var direction_animation = Array()
+				direction_animation.append("Mapa/animacion_metro/" + str(list_stations_id[i] * list_stations_id[i + 1]))
+				direction_animation.append(-1)
+				list_id_train_animation.append(direction_animation)
 		else:
 			list_id_arist.append("Mapa/conexiones/" + str(list_stations_id[i] * list_stations_id[i + 1] * 100))
-	return list_id_arist
+			if list_stations_id[i] > list_stations_id[i + 1]:
+				var direction_animation = Array()
+				direction_animation.append("Mapa/animacion_metro/" + str(list_stations_id[i] * list_stations_id[i + 1] * 100))
+				direction_animation.append(1)
+				list_id_train_animation.append(direction_animation)
+			else:
+				var direction_animation = Array()
+				direction_animation.append("Mapa/animacion_metro/" + str(list_stations_id[i] * list_stations_id[i + 1] * 100))
+				direction_animation.append(-1)
+				list_id_train_animation.append(direction_animation)
+
+	lista_conjunta.append(list_id_arist)
+	lista_conjunta.append(list_id_train_animation)
+	return lista_conjunta 
 
 func _on_button_pressed():
 	for node in target_nodes:
@@ -101,14 +126,30 @@ func desocultar(lista_aristas):
 		nodo.visible = true
 
 
+func animar_tren(lista_animacion_train):
+	for arista in lista_animacion_train:
+		var nodo = get_node(arista[0])
+		nodo.inicializar = 0
+		nodo.aceleracion = 0
+		nodo.direction = arista[1]
+		nodo.is_moving = true
+		
+		print(arista[1])
+		await get_tree().create_timer(2.2).timeout
+
+		
 func _button_combined():
 	_on_button_pressed()
 	on_calcular_ruta_button_pressed()
 	var ruta = GlobalData.path
 	var tiempo = GlobalData.travel_duration
 	var id_path = GlobalData.path_ids
-	var lista_aristas = make_arist(id_path)
+	var lista_conjunta = make_arist(id_path)
+	var lista_aristas = lista_conjunta[0] 
+	var lista_animacion_train = lista_conjunta[1]
+	print(lista_animacion_train)
 	desocultar(lista_aristas)
+	animar_tren(lista_animacion_train)
 	_show_button_mas_info()
 	path.text = GlobalData.get_array()
 	time.text = str(GlobalData.travel_duration) + " minutos."

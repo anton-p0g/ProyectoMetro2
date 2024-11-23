@@ -14,7 +14,7 @@ func get_python_path() -> String:
 	print(results)
 	
 	if res == 0 and result.size() > 0:
-		return result[0].strip_edges()
+		return results[0].strip_edges()
 	else:
 		print("Error: Unable to find Python executable.")
 		return ""

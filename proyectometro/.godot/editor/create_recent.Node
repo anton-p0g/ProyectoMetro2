@@ -1,3 +1,6 @@
+Sprite2D
+Sprite3D
+Node2D
 ColorRect
 AnimationPlayer
 Control
@@ -9,5 +12,3 @@ Node
 Label
 Window
 Container
-SpinBox
-OptionButton

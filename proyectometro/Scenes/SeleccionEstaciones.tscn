@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://bk63wmtlleaop"]
+[gd_scene load_steps=96 format=4 uid="uid://bk63wmtlleaop"]
 
 [ext_resource type="Script" path="res://Scripts/Gui/mostrar_estaciones_origen_destino.gd" id="1_31r6i"]
 [ext_resource type="Script" path="res://Scripts/Gui/custom_cursor.gd" id="1_e8mij"]
@@ -21,9 +21,12 @@
 [ext_resource type="Texture2D" uid="uid://drgafcl8emknt" path="res://Assets/routes/lineaD.jpeg" id="14_r8cj4"]
 [ext_resource type="Texture2D" uid="uid://bsr0w6ytalsbw" path="res://Assets/routes/lineaE.jpeg" id="15_7scxj"]
 [ext_resource type="Script" path="res://Scripts/seleccionar_hora.gd" id="18_jkmt0"]
+[ext_resource type="Script" path="res://Scripts/animacion_tren.gd" id="22_lmbv1"]
 [ext_resource type="Texture2D" uid="uid://fkqu8ir0tk5o" path="res://Assets/Sprites/Buttons/button_square.png" id="22_lmm84"]
 [ext_resource type="Script" path="res://Scripts/Gui/mostrar_mas_info.gd" id="22_s2c4m"]
 [ext_resource type="Texture2D" uid="uid://ce3e6eplmqcot" path="res://Assets/Sprites/Buttons/panel_square_screws.png" id="23_b86us"]
+[ext_resource type="Texture2D" uid="uid://d3qnubqe7c6ad" path="res://Assets/routes/metro.png" id="23_ob8nb"]
+[ext_resource type="PackedScene" uid="uid://b630qf5124kcm" path="res://Scenes/personaje_trans.tscn" id="24_84ani"]
 [ext_resource type="Texture2D" uid="uid://ub0r8lgwtmc5" path="res://Assets/Sprites/Buttons/button_square_depth.png" id="24_hp72c"]
 [ext_resource type="Texture2D" uid="uid://cx3ma8wma5p05" path="res://Assets/TileSet/MenuGris.png" id="26_awa46"]
 [ext_resource type="Script" path="res://Scripts/Gui/nodo_menu.gd" id="26_vs020"]
@@ -47,6 +50,222 @@ texture = ExtResource("6_55l7p")
 
 [sub_resource type="LabelSettings" id="LabelSettings_qd6w7"]
 font_size = 40
+
+[sub_resource type="Curve2D" id="Curve2D_y3u1r"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 45.8333, 862.745, 0, 0, 0, 0, -120.833, 803.922)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_er8rm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 233.333, 933.333, 0, 0, 0, 0, 45.8333, 860.784)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_03k7u"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 410.417, 833.333, 0, 0, 0, 0, 362.5, 935.294, 0, 0, 0, 0, 272.917, 950.98, 0, 0, 0, 0, 235.417, 933.333)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_abytp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 606.25, 701.961, 0, 0, 0, 0, 445.833, 758.824, 0, 0, 0, 0, 412.5, 835.294)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_yyh57"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 772.917, 633.333, 0, 0, 0, 0, 606.25, 701.961)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_pqcyr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 670.833, 370.588, 0, 0, 0, 0, 700, 398.039)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_8tmny"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 412.5, 835.294, 0, 0, 0, 0, 450, 849.02)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_1x8li"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 670.833, 370.588, 0, 0, 0, 0, 647.917, 327.451)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_r6kot"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 772.917, 633.333, 0, 0, 0, 0, 795.833, 562.745)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_2wokr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 770.833, 631.373, 0, 0, 0, 0, 768.75, 592.157)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_wbdhv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 793.75, 562.745, 0, 0, 0, 0, 768.75, 592.157)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_1evnm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 587.5, 525.49, 0, 0, 0, 0, 529.167, 501.961)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_cyk5l"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 402.083, 39.2157, 0, 0, 0, 0, 237.5, -29.4118)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_243fx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 587.5, 219.608, 0, 0, 0, 0, 556.25, 98.0392, 0, 0, 0, 0, 400, 37.2549)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_idx4e"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 670.833, 370.588, -3.9417, 0.824408, 3.9417, -0.824408, 612.5, 317.647, 0, 0, 0, 0, 587.5, 217.647)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_wqr17"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 793.75, 562.745, 0, 0, 0, 0, 670.833, 370.588)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_xyd6l"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 387.5, 1001.96, 0, 0, 0, 0, 370.833, 1043.14, 0, 0, 0, 0, 300, 1076.47, 0, 0, 0, 0, 262.5, 1160.78)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_8r3m8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 447.917, 850.98, 0, 0, 0, 0, 387.5, 1000)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_0pktv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 533.333, 641.177, 0, 0, 0, 0, 450, 849.02)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_guxxk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 585.417, 523.529, 0, 0, 0, 0, 533.333, 643.137)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_0vkov"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 697.917, 398.039, 0, 0, 0, 0, 660.417, 386.275, 0, 0, 0, 0, 631.25, 401.961, 0, 0, 0, 0, 589.583, 523.529)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_6p6ci"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 772.917, 307.843, 0, 0, 0, 0, 739.583, 390.196, 0, 0, 0, 0, 700, 400)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_r36mh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 900, 94.1176, 0, 0, 0, 0, 839.583, 143.137, 0, 0, 0, 0, 772.917, 305.882)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_lxf8t"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1035.42, -19.6078, 0, 0, 0, 0, 897.917, 94.1176)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_bbtel"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 108.333, 115.686, 0, 0, 0, 0, 322.917, 207.843)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_dfe4w"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 322.917, 207.843, 0, 0, 0, 0, 493.75, 270.588)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_1fg72"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 493.75, 268.627, 0, 0, 0, 0, 647.917, 327.451)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_dpenw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 647.917, 327.451, 0, 0, 0, 0, 858.333, 405.882)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_hvdxo"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 860.417, 405.882, 0, 0, 0, 0, 1006.25, 460.784)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_6l86b"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -18.75, 280.392, 0, 0, 0, 0, 62.5, 309.804)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_qqgit"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 62.5, 309.804, 0, 0, 0, 0, 229.167, 372.549)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_xq25i"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 233.333, 372.549, 0, 0, 0, 0, 352.083, 417.647, 0, 0, 0, 0, 372.917, 447.059, 0, 0, 0, 0, 397.917, 456.863)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_isbir"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 400, 456.863, 0, 0, 0, 0, 529.167, 501.961)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_e3is8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 531.25, 501.961, 0, 0, 0, 0, 650, 547.059)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_pbvfb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 604.167, -315.686, 0, 0, 0, 0, 722.917, -268.627)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_k3ncc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 887.5, -209.804, 0, 0, 0, 0, 912.5, -200, 0, 0, 0, 0, 929.167, -178.432, 0, 0, 0, 0, 977.083, -162.745)
+}
+point_count = 4
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ljy5w"]
 
@@ -2893,15 +3112,6 @@ rotation = -0.702687
 scale = Vector2(0.890281, 1)
 texture = ExtResource("13_uiy4y")
 
-[node name="462" type="Node2D" parent="Mapa/conexiones"]
-z_index = 5
-
-[node name="462" type="Sprite2D" parent="Mapa/conexiones/462"]
-position = Vector2(931.481, 434.514)
-rotation = 0.361262
-scale = Vector2(0.838327, 1)
-texture = ExtResource("12_0cb10")
-
 [node name="650" type="Node2D" parent="Mapa/conexiones"]
 z_index = 5
 
@@ -2938,6 +3148,33 @@ rotation = 0.366225
 scale = Vector2(1.1853, 1)
 texture = ExtResource("12_0cb10")
 
+[node name="462" type="Node2D" parent="Mapa/conexiones"]
+z_index = 5
+
+[node name="462" type="Sprite2D" parent="Mapa/conexiones/462"]
+position = Vector2(931.481, 434.514)
+rotation = 0.361262
+scale = Vector2(0.838327, 1)
+texture = ExtResource("12_0cb10")
+
+[node name="306" type="Node2D" parent="Mapa/conexiones"]
+z_index = 5
+
+[node name="306" type="Sprite2D" parent="Mapa/conexiones/306"]
+position = Vector2(23.1503, 295.546)
+rotation = 0.348251
+scale = Vector2(0.401822, 1)
+texture = ExtResource("11_26jix")
+
+[node name="272" type="Node2D" parent="Mapa/conexiones"]
+z_index = 5
+
+[node name="2720" type="Sprite2D" parent="Mapa/conexiones/272"]
+position = Vector2(148.196, 342.255)
+rotation = 0.344376
+scale = Vector2(0.818388, 1)
+texture = ExtResource("11_26jix")
+
 [node name="240" type="Node2D" parent="Mapa/conexiones"]
 z_index = 4
 
@@ -2957,24 +3194,6 @@ texture = ExtResource("11_26jix")
 position = Vector2(388, 452)
 rotation = 0.364711
 scale = Vector2(0.14894, 1)
-texture = ExtResource("11_26jix")
-
-[node name="306" type="Node2D" parent="Mapa/conexiones"]
-z_index = 5
-
-[node name="306" type="Sprite2D" parent="Mapa/conexiones/306"]
-position = Vector2(23.1503, 295.546)
-rotation = 0.348251
-scale = Vector2(0.401822, 1)
-texture = ExtResource("11_26jix")
-
-[node name="272" type="Node2D" parent="Mapa/conexiones"]
-z_index = 5
-
-[node name="2720" type="Sprite2D" parent="Mapa/conexiones/272"]
-position = Vector2(148.196, 342.255)
-rotation = 0.344376
-scale = Vector2(0.818388, 1)
 texture = ExtResource("11_26jix")
 
 [node name="210" type="Node2D" parent="Mapa/conexiones"]
@@ -3024,6 +3243,615 @@ position = Vector2(836.847, 631.203)
 rotation = 0.311208
 scale = Vector2(0.26194, 1)
 texture = ExtResource("11_26jix")
+
+[node name="animacion_metro" type="Node2D" parent="Mapa"]
+
+[node name="2652" type="Node2D" parent="Mapa/animacion_metro"]
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/2652"]
+z_index = 2
+curve = SubResource("Curve2D_y3u1r")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/2652/Path2D"]
+position = Vector2(45.8333, 862.745)
+rotation = -2.8023
+loop = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/2652/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="2756" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/2756"]
+curve = SubResource("Curve2D_er8rm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/2756/Path2D"]
+position = Vector2(233.333, 933.333)
+rotation = -2.77241
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/2756/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="2862" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/2862"]
+curve = SubResource("Curve2D_03k7u")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/2862/Path2D"]
+position = Vector2(410.417, 833.333)
+rotation = 2.01012
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/2862/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="2970" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/2970"]
+curve = SubResource("Curve2D_abytp")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/2970/Path2D"]
+position = Vector2(606.25, 701.961)
+rotation = 2.80094
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/2970/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="3080" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/3080"]
+curve = SubResource("Curve2D_yyh57")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/3080/Path2D"]
+position = Vector2(772.917, 633.333)
+rotation = 2.75098
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/3080/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="158400" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 6
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/158400"]
+curve = SubResource("Curve2D_pqcyr")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/158400/Path2D"]
+position = Vector2(670.833, 370.588)
+rotation = 0.755099
+
+[node name="Sprite2D" parent="Mapa/animacion_metro/158400/Path2D/PathFollow2D" instance=ExtResource("24_84ani")]
+
+[node name="178200" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 6
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/178200"]
+curve = SubResource("Curve2D_8tmny")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/178200/Path2D"]
+position = Vector2(412.5, 835.294)
+rotation = 0.350881
+
+[node name="Sprite2D" parent="Mapa/animacion_metro/178200/Path2D/PathFollow2D" instance=ExtResource("24_84ani")]
+
+[node name="101200" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 6
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/101200"]
+curve = SubResource("Curve2D_1x8li")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/101200/Path2D"]
+position = Vector2(670.833, 370.588)
+rotation = -2.05912
+
+[node name="Sprite2D" parent="Mapa/animacion_metro/101200/Path2D/PathFollow2D" instance=ExtResource("24_84ani")]
+rotation = 2.33874
+
+[node name="252000" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 6
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/252000"]
+curve = SubResource("Curve2D_r6kot")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/252000/Path2D"]
+position = Vector2(772.917, 633.333)
+rotation = -1.25689
+
+[node name="Sprite2D" parent="Mapa/animacion_metro/252000/Path2D/PathFollow2D" instance=ExtResource("24_84ani")]
+
+[node name="67200" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 6
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/67200"]
+curve = SubResource("Curve2D_2wokr")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/67200/Path2D"]
+position = Vector2(770.833, 631.373)
+rotation = -1.62386
+
+[node name="Sprite2D" parent="Mapa/animacion_metro/67200/Path2D/PathFollow2D" instance=ExtResource("24_84ani")]
+
+[node name="54000" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 6
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/54000"]
+curve = SubResource("Curve2D_wbdhv")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/54000/Path2D"]
+position = Vector2(793.75, 562.745)
+rotation = 2.27529
+
+[node name="Sprite2D" parent="Mapa/animacion_metro/54000/Path2D/PathFollow2D" instance=ExtResource("24_84ani")]
+rotation = 3.3615
+
+[node name="49000" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 6
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/49000"]
+curve = SubResource("Curve2D_1evnm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/49000/Path2D"]
+position = Vector2(587.5, 525.49)
+rotation = -2.7582
+
+[node name="Sprite2D" parent="Mapa/animacion_metro/49000/Path2D/PathFollow2D" instance=ExtResource("24_84ani")]
+rotation = 3.3615
+
+[node name="1722" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/1722"]
+curve = SubResource("Curve2D_cyk5l")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/1722/Path2D"]
+position = Vector2(402.083, 39.2157)
+rotation = -2.74654
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/1722/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="1806" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/1806"]
+curve = SubResource("Curve2D_243fx")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/1806/Path2D"]
+position = Vector2(587.5, 219.608)
+rotation = -1.8224
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/1806/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="1892" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/1892"]
+curve = SubResource("Curve2D_idx4e")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/1892/Path2D"]
+position = Vector2(670.833, 370.588)
+rotation = -2.40461
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/1892/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="1980" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/1980"]
+curve = SubResource("Curve2D_wqr17")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/1980/Path2D"]
+position = Vector2(793.75, 562.745)
+rotation = -2.13988
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/1980/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="992" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/992"]
+curve = SubResource("Curve2D_xyd6l")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/992/Path2D"]
+position = Vector2(387.5, 1001.96)
+rotation = 1.95538
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/992/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="1056" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/1056"]
+curve = SubResource("Curve2D_8r3m8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/1056/Path2D"]
+position = Vector2(447.917, 850.98)
+rotation = 1.95597
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/1056/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="1122" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/1122"]
+curve = SubResource("Curve2D_0pktv")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/1122/Path2D"]
+position = Vector2(533.333, 641.177)
+rotation = 1.95211
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/1122/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="1190" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/1190"]
+curve = SubResource("Curve2D_guxxk")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/1190/Path2D"]
+position = Vector2(585.417, 523.529)
+rotation = 1.98149
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/1190/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="1260" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/1260"]
+curve = SubResource("Curve2D_0vkov")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/1260/Path2D"]
+position = Vector2(697.917, 398.039)
+rotation = -2.83761
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/1260/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="1332" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/1332"]
+curve = SubResource("Curve2D_6p6ci")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/1332/Path2D"]
+position = Vector2(772.917, 307.843)
+rotation = 1.95541
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/1332/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="1406" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/1406"]
+curve = SubResource("Curve2D_r36mh")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/1406/Path2D"]
+position = Vector2(900, 94.1176)
+rotation = 2.45997
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/1406/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="1482" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/1482"]
+curve = SubResource("Curve2D_lxf8t")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/1482/Path2D"]
+position = Vector2(1035.42, -19.6078)
+rotation = 2.45056
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/1482/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="650" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/650"]
+curve = SubResource("Curve2D_bbtel")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/650/Path2D"]
+position = Vector2(108.333, 115.686)
+rotation = 0.405649
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/650/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="600" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/600"]
+curve = SubResource("Curve2D_dfe4w")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/600/Path2D"]
+position = Vector2(322.917, 207.843)
+rotation = 0.351993
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/600/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="552" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/552"]
+curve = SubResource("Curve2D_1fg72")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/552/Path2D"]
+position = Vector2(493.75, 268.627)
+rotation = 0.36451
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/552/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="506" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/506"]
+curve = SubResource("Curve2D_dpenw")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/506/Path2D"]
+position = Vector2(647.917, 327.451)
+rotation = 0.35679
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/506/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="462" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/462"]
+curve = SubResource("Curve2D_hvdxo")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/462/Path2D"]
+position = Vector2(860.417, 405.882)
+rotation = 0.36006
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/462/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="240" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 4
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/240"]
+curve = SubResource("Curve2D_6l86b")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/240/Path2D"]
+position = Vector2(-18.75, 280.392)
+rotation = 0.347319
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/240/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="306" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/306"]
+curve = SubResource("Curve2D_qqgit")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/306/Path2D"]
+position = Vector2(62.5, 309.804)
+rotation = 0.360058
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/306/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="272" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/272"]
+curve = SubResource("Curve2D_xq25i")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/272/Path2D"]
+position = Vector2(233.333, 372.549)
+rotation = 0.362948
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/272/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="210" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/210"]
+curve = SubResource("Curve2D_isbir")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/210/Path2D"]
+position = Vector2(400, 456.863)
+rotation = 0.335913
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/210/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="182" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/182"]
+curve = SubResource("Curve2D_e3is8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/182/Path2D"]
+position = Vector2(531.25, 501.961)
+rotation = 0.362948
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/182/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="156" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+position = Vector2(45.8333, 862.745)
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/156"]
+curve = SubResource("Curve2D_pbvfb")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/156/Path2D"]
+position = Vector2(604.167, -315.686)
+rotation = 0.377301
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/156/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="132" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+position = Vector2(-118.75, 801.961)
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/132"]
+curve = SubResource("Curve2D_k3ncc")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/132/Path2D"]
+position = Vector2(887.5, -209.804)
+rotation = 0.37373
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/132/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
 
 [node name="MasInfo" type="Button" parent="."]
 visible = false
@@ -3125,6 +3953,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 57.0
+offset_top = -1.0
+offset_right = 57.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

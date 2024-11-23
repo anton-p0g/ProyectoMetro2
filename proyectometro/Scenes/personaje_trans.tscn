@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b630qf5124kcm"]
+
+[ext_resource type="Texture2D" uid="uid://bch8ouk3laf0b" path="res://Assets/routes/personaje.png" id="1_f0ibu"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(1.86631, -2.25439)
+scale = Vector2(0.104269, 0.107659)
+texture = ExtResource("1_f0ibu")
