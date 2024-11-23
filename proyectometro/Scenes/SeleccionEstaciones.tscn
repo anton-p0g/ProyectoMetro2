@@ -3732,33 +3732,16 @@ position = Vector2(-3.89339, 1.48421)
 scale = Vector2(0.393666, 0.389373)
 texture = ExtResource("23_ob8nb")
 
-[node name="240" type="Node2D" parent="Mapa/animacion_metro"]
+[node name="306" type="Node2D" parent="Mapa/animacion_metro"]
 z_index = 4
 script = ExtResource("22_lmbv1")
 
-[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/240"]
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/306"]
 curve = SubResource("Curve2D_6l86b")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/240/Path2D"]
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/306/Path2D"]
 position = Vector2(-18.75, 280.392)
 rotation = 0.347319
-
-[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/240/Path2D/PathFollow2D"]
-z_index = 5
-position = Vector2(-3.89339, 1.48421)
-scale = Vector2(0.393666, 0.389373)
-texture = ExtResource("23_ob8nb")
-
-[node name="306" type="Node2D" parent="Mapa/animacion_metro"]
-z_index = 5
-script = ExtResource("22_lmbv1")
-
-[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/306"]
-curve = SubResource("Curve2D_qqgit")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/306/Path2D"]
-position = Vector2(62.5, 309.804)
-rotation = 0.360058
 
 [node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/306/Path2D/PathFollow2D"]
 z_index = 5
@@ -3771,13 +3754,30 @@ z_index = 5
 script = ExtResource("22_lmbv1")
 
 [node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/272"]
-curve = SubResource("Curve2D_xq25i")
+curve = SubResource("Curve2D_qqgit")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/272/Path2D"]
+position = Vector2(62.5, 309.804)
+rotation = 0.360058
+
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/272/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("23_ob8nb")
+
+[node name="240" type="Node2D" parent="Mapa/animacion_metro"]
+z_index = 5
+script = ExtResource("22_lmbv1")
+
+[node name="Path2D" type="Path2D" parent="Mapa/animacion_metro/240"]
+curve = SubResource("Curve2D_xq25i")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mapa/animacion_metro/240/Path2D"]
 position = Vector2(233.333, 372.549)
 rotation = 0.362948
 
-[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/272/Path2D/PathFollow2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Mapa/animacion_metro/240/Path2D/PathFollow2D"]
 z_index = 5
 position = Vector2(-3.89339, 1.48421)
 scale = Vector2(0.393666, 0.389373)
