@@ -56,6 +56,10 @@ func load_scene() -> void:
 @onready var time = $MostrarMasInfo/VBoxContainer/Tiempo/tiempo
 @onready var hora = $MostrarMasInfo/VBoxContainer/Hora/hora
 
+signal inicio_animacion
+
+
+
 func _ready() -> void:
 	$NodoRuta/CalcularRuta.connect("pressed", Callable(self, "_button_combined"))
 	mas_button.connect("pressed", Callable(self, "_show_pop_up_window"))
@@ -133,11 +137,9 @@ func animar_tren(lista_animacion_train):
 		nodo.aceleracion = 0
 		nodo.direction = arista[1]
 		nodo.is_moving = true
-		
-		print(arista[1])
-		await get_tree().create_timer(2.2).timeout
+		await nodo.animacion_tren
 
-		
+
 func _button_combined():
 	_on_button_pressed()
 	on_calcular_ruta_button_pressed()
@@ -154,6 +156,7 @@ func _button_combined():
 	path.text = GlobalData.get_array()
 	time.text = str(GlobalData.travel_duration) + " minutos."
 	hora.text = str(GlobalData.arrival_time)
+
 
 func _show_button_mas_info():
 	mas_button.visible = true

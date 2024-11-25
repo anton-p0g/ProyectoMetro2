@@ -8,9 +8,9 @@ extends Node2D
 @export var is_moving = false
 @export var direction = 1
 @export var inicializar = 0
-
 @export var aceleracion: float = 0
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
+signal animacion_tren
 
 func _process(delta: float) -> void:
 	if is_moving:
@@ -61,5 +61,7 @@ func _process(delta: float) -> void:
 				is_moving = false
 				await get_tree().create_timer(0.5).timeout
 				path_follow_2d.progress_ratio = 0
+				
 	else:
+		animacion_tren.emit()
 		path_follow_2d.visible = false
