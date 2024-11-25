@@ -1,0 +1,180 @@
+[gd_scene load_steps=6 format=3 uid="uid://chpds3pm0crgy"]
+
+[ext_resource type="Script" path="res://Scripts/animacion_tren.gd" id="1_4llcl"]
+[ext_resource type="Texture2D" uid="uid://ph8vsawulrx8" path="res://Assets/routes/metro.png" id="2_wpiqp"]
+
+[sub_resource type="Curve2D" id="Curve2D_v3f6q"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 45.8333, 862.745, 0, 0, 0, 0, -120.833, 803.922)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_qrf36"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 233.333, 933.333, 0, 0, 0, 0, 45.8333, 860.784)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_wxsre"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 410.417, 833.333, 0, 0, 0, 0, 362.5, 935.294, 0, 0, 0, 0, 272.917, 950.98, 0, 0, 0, 0, 235.417, 933.333)
+}
+point_count = 4
+
+[node name="animacion_metro" type="Node2D"]
+
+[node name="2652" type="Node2D" parent="."]
+script = ExtResource("1_4llcl")
+
+[node name="Path2D" type="Path2D" parent="2652"]
+z_index = 2
+curve = SubResource("Curve2D_v3f6q")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="2652/Path2D"]
+position = Vector2(45.8333, 862.745)
+rotation = -2.8023
+loop = false
+
+[node name="Sprite2D" type="Sprite2D" parent="2652/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("2_wpiqp")
+
+[node name="2756" type="Node2D" parent="."]
+z_index = 5
+script = ExtResource("1_4llcl")
+
+[node name="Path2D" type="Path2D" parent="2756"]
+curve = SubResource("Curve2D_qrf36")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="2756/Path2D"]
+position = Vector2(233.333, 933.333)
+rotation = -2.77241
+
+[node name="Sprite2D" type="Sprite2D" parent="2756/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("2_wpiqp")
+
+[node name="2862" type="Node2D" parent="."]
+z_index = 5
+script = ExtResource("1_4llcl")
+
+[node name="Path2D" type="Path2D" parent="2862"]
+curve = SubResource("Curve2D_wxsre")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="2862/Path2D"]
+position = Vector2(410.417, 833.333)
+rotation = 2.01012
+
+[node name="Sprite2D" type="Sprite2D" parent="2862/Path2D/PathFollow2D"]
+z_index = 5
+position = Vector2(-3.89339, 1.48421)
+rotation = -3.1225
+scale = Vector2(0.393666, 0.389373)
+texture = ExtResource("2_wpiqp")
+
+[node name="2970" type="Node2D" parent="."]
+z_index = 5
+
+[node name="3080" type="Node2D" parent="."]
+z_index = 5
+
+[node name="158400" type="Node2D" parent="."]
+z_index = 6
+
+[node name="178200" type="Node2D" parent="."]
+z_index = 6
+
+[node name="101200" type="Node2D" parent="."]
+z_index = 6
+
+[node name="252000" type="Node2D" parent="."]
+z_index = 6
+
+[node name="67200" type="Node2D" parent="."]
+z_index = 6
+
+[node name="54000" type="Node2D" parent="."]
+z_index = 6
+
+[node name="49000" type="Node2D" parent="."]
+z_index = 6
+
+[node name="1722" type="Node2D" parent="."]
+z_index = 5
+
+[node name="1806" type="Node2D" parent="."]
+z_index = 5
+
+[node name="1892" type="Node2D" parent="."]
+z_index = 5
+
+[node name="1980" type="Node2D" parent="."]
+z_index = 5
+
+[node name="992" type="Node2D" parent="."]
+z_index = 5
+
+[node name="1056" type="Node2D" parent="."]
+z_index = 5
+
+[node name="1122" type="Node2D" parent="."]
+z_index = 5
+
+[node name="1190" type="Node2D" parent="."]
+z_index = 5
+
+[node name="1260" type="Node2D" parent="."]
+z_index = 5
+
+[node name="1332" type="Node2D" parent="."]
+z_index = 5
+
+[node name="1406" type="Node2D" parent="."]
+z_index = 5
+
+[node name="1482" type="Node2D" parent="."]
+z_index = 5
+
+[node name="462" type="Node2D" parent="."]
+z_index = 5
+
+[node name="650" type="Node2D" parent="."]
+z_index = 5
+
+[node name="600" type="Node2D" parent="."]
+z_index = 5
+
+[node name="552" type="Node2D" parent="."]
+z_index = 5
+
+[node name="506" type="Node2D" parent="."]
+z_index = 5
+
+[node name="240" type="Node2D" parent="."]
+z_index = 4
+
+[node name="306" type="Node2D" parent="."]
+z_index = 5
+
+[node name="272" type="Node2D" parent="."]
+z_index = 5
+
+[node name="210" type="Node2D" parent="."]
+z_index = 5
+
+[node name="182" type="Node2D" parent="."]
+z_index = 5
+
+[node name="156" type="Node2D" parent="."]
+z_index = 5
+position = Vector2(45.8333, 862.745)
+
+[node name="132" type="Node2D" parent="."]
+z_index = 5
+position = Vector2(-118.75, 801.961)
