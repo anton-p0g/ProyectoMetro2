@@ -57,8 +57,8 @@ func load_scene() -> void:
 @onready var hora = $MostrarMasInfo/VBoxContainer/Hora/hora
 
 signal inicio_animacion
-
-
+var ejecucion_animacion = false
+@onready var mapa: Node2D = $Mapa
 
 func _ready() -> void:
 	$NodoRuta/CalcularRuta.connect("pressed", Callable(self, "_button_combined"))
@@ -81,6 +81,9 @@ func on_calcular_ruta_button_pressed():
 	
 	var python_call = preload("res://Scripts/python_call.gd").new()
 	python_call.run_python_script(id_origen, id_destino, selected_day, selected_hour, selected_minute)
+
+		
+		
 	
 
 func make_arist(list_stations_id: Array) -> Array:
@@ -130,28 +133,62 @@ func desocultar(lista_aristas):
 		nodo.visible = true
 
 
-func animar_tren(lista_animacion_train):
+func animar_tren(nodos, direcciones):
+	for arista in range(len(nodos.get_children())):
+		nodos.get_children()[arista].inicializar = 0
+		nodos.get_children()[arista].aceleracion = 0
+		nodos.get_children()[arista].direction = direcciones[arista]
+		nodos.get_children()[arista].is_moving = true
+		await nodos.get_children()[arista].animacion_tren
+
+
+func crear_animacion(lista_animacion_train):
+	var nodo_animacion = Node2D.new()
+	mapa.add_child(nodo_animacion)
+	var direcciones = Array()
 	for arista in lista_animacion_train:
 		var nodo = get_node(arista[0])
-		nodo.inicializar = 0
-		nodo.aceleracion = 0
-		nodo.direction = arista[1]
-		nodo.is_moving = true
-		await nodo.animacion_tren
-
+		direcciones.append(arista[1])
+		var clone = nodo.duplicate()
+		nodo_animacion.add_child(clone)
+	var resultado = [nodo_animacion, direcciones]
+	return resultado
+		
+func ultimo_nodo(nodos):
+	return nodos.get_children()[-1]
 
 func _button_combined():
 	_on_button_pressed()
 	on_calcular_ruta_button_pressed()
 	var ruta = GlobalData.path
 	var tiempo = GlobalData.travel_duration
-	var id_path = GlobalData.path_ids
-	var lista_conjunta = make_arist(id_path)
-	var lista_aristas = lista_conjunta[0] 
-	var lista_animacion_train = lista_conjunta[1]
-	print(lista_animacion_train)
-	desocultar(lista_aristas)
-	animar_tren(lista_animacion_train)
+	if not ejecucion_animacion:
+		var id_path = GlobalData.path_ids
+		var lista_conjunta = make_arist(id_path)
+		var lista_aristas = lista_conjunta[0] 
+		var lista_animacion_train = lista_conjunta[1]
+		desocultar(lista_aristas)
+		var resultado = crear_animacion(lista_animacion_train)
+		print(mapa.get_children())
+		ejecucion_animacion = true
+		animar_tren(resultado[0], resultado[1])
+	else:
+		var nodo_ultimo = ultimo_nodo(mapa)
+		nodo_ultimo.queue_free()
+		print(mapa.get_children())
+		ejecucion_animacion = false
+		if not ejecucion_animacion:
+			var id_path = GlobalData.path_ids
+			var lista_conjunta = make_arist(id_path)
+			var lista_aristas = lista_conjunta[0] 
+			var lista_animacion_train = lista_conjunta[1]
+			desocultar(lista_aristas)
+			var resultado = crear_animacion(lista_animacion_train)
+			print(mapa.get_children())
+			ejecucion_animacion = true
+			animar_tren(resultado[0], resultado[1])
+
+
 	_show_button_mas_info()
 	path.text = GlobalData.get_array()
 	time.text = str(GlobalData.travel_duration) + " minutos."
