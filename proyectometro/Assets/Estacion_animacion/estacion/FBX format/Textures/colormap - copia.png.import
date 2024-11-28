@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g3v1h3otjiqp"
-path.s3tc="res://.godot/imported/colormap.png-eb3025f28931c4572b187c23261e40ca.s3tc.ctex"
+uid="uid://57i2uxt7d5c0"
+path.s3tc="res://.godot/imported/colormap - copia.png-efc5eca1a7b33557bd5d9972d565e6af.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Estacion_animacion/estacion/FBX format/Textures/colormap.png"
-dest_files=["res://.godot/imported/colormap.png-eb3025f28931c4572b187c23261e40ca.s3tc.ctex"]
+source_file="res://Assets/Estacion_animacion/estacion/FBX format/Textures/colormap - copia.png"
+dest_files=["res://.godot/imported/colormap - copia.png-efc5eca1a7b33557bd5d9972d565e6af.s3tc.ctex"]
 
 [params]
 
