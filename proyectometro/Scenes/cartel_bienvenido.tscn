@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://degv1qbjajaqq"]
+
+[ext_resource type="Texture2D" uid="uid://bnimubqauckp7" path="res://Assets/Sprites/bienvenido.png" id="1_v1lpl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wsil3"]
+albedo_texture = ExtResource("1_v1lpl")
+
+[sub_resource type="QuadMesh" id="QuadMesh_gmbsc"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.54719, 0, 0, 0, 1, 0, 0, 0, 1, -0.139987, 0, 0)
+material_override = SubResource("StandardMaterial3D_wsil3")
+mesh = SubResource("QuadMesh_gmbsc")

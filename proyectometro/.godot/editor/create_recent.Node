@@ -1,3 +1,5 @@
+Camera3D
+SpotLight3D
 MeshInstance3D
 Node3D
 AudioStreamPlayer
@@ -10,5 +12,3 @@ VBoxContainer
 Control
 Sprite2D
 Node2D
-VScrollBar
-Label

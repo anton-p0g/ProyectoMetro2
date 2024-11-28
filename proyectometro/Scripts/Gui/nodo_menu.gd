@@ -19,4 +19,5 @@ func _on_main_menu_pressed() -> void:
 	Transition.transition_to("res://Scenes/Gui/StartMenuScreen.tscn")
 
 func _on_exit_pressed() -> void:
-		get_tree().quit()
+	Transition.transition_to("res://Scenes/estacion_salida.tscn")
+	#get_tree().quit()

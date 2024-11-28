@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1m5hgmjg7qn4"
-path.s3tc="res://.godot/imported/map.png-f6e14e882ebf6c083cbb0f2ca7326ae1.s3tc.ctex"
+uid="uid://bnimubqauckp7"
+path.s3tc="res://.godot/imported/bienvenido.png-0f98b423bc70548acabae0707c95efd2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/routes/map.png"
-dest_files=["res://.godot/imported/map.png-f6e14e882ebf6c083cbb0f2ca7326ae1.s3tc.ctex"]
+source_file="res://Assets/Sprites/bienvenido.png"
+dest_files=["res://.godot/imported/bienvenido.png-0f98b423bc70548acabae0707c95efd2.s3tc.ctex"]
 
 [params]
 
