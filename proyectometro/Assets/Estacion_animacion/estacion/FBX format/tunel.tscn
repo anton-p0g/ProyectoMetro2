@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cprig7hhmvll2"]
+
+[ext_resource type="Texture2D" uid="uid://57i2uxt7d5c0" path="res://Assets/Estacion_animacion/estacion/FBX format/Textures/colormap - copia.png" id="1_jsfdk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_io05y"]
+albedo_texture = ExtResource("1_jsfdk")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bkliv"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xr0uv"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -0.0725398, 0.182016, 0.330579)
+material_override = SubResource("StandardMaterial3D_io05y")
+mesh = SubResource("CylinderMesh_bkliv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-5.66234e-08, -0.75, -6.55671e-08, -0.75, 5.66234e-08, 6.55671e-08, -6.55671e-08, 6.55671e-08, -0.75, 0.190117, 0.187371, 0.326701)
+mesh = SubResource("CylinderMesh_xr0uv")

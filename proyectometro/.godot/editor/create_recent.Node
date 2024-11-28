@@ -1,3 +1,5 @@
+MeshInstance3D
+Node3D
 AudioStreamPlayer
 HBoxContainer
 Panel
@@ -10,5 +12,3 @@ Sprite2D
 Node2D
 VScrollBar
 Label
-Window
-Popup
