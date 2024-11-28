@@ -136,7 +136,6 @@ func desocultar(lista_aristas):
 func animar_tren(nodos, direcciones):
 	for arista in range(len(nodos.get_children())):
 		nodos.get_children()[arista].inicializar = 0
-		nodos.get_children()[arista].aceleracion = 0
 		nodos.get_children()[arista].direction = direcciones[arista]
 		nodos.get_children()[arista].is_moving = true
 		await nodos.get_children()[arista].animacion_tren

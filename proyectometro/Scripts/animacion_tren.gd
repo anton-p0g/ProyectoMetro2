@@ -8,7 +8,7 @@ extends Node2D
 @export var is_moving = false
 @export var direction = 1
 @export var inicializar = 0
-@export var aceleracion: float = 0
+
 
 signal animacion_tren
 
@@ -20,15 +20,13 @@ func _process(delta: float) -> void:
 				inicializar = 1
 				
 			path_follow_2d.visible = true
-			var velocidad = -(delta*(0.1) + aceleracion)
+			var velocidad = -delta
 			
 			if path_follow_2d.progress_ratio > 0.8:
 				path_follow_2d.progress_ratio += velocidad
-				aceleracion += delta*(0.05)
 			
 			elif path_follow_2d.progress_ratio < 0.2:
 				path_follow_2d.progress_ratio += velocidad
-				aceleracion -= delta*(0.05)
 			
 			else:
 				path_follow_2d.progress_ratio += velocidad
@@ -44,15 +42,13 @@ func _process(delta: float) -> void:
 				inicializar = 1
 				
 			path_follow_2d.visible = true
-			var velocidad = delta*(0.1) + aceleracion
+			var velocidad = delta
 		
 			if path_follow_2d.progress_ratio < 0.2:
 				path_follow_2d.progress_ratio += velocidad
-				aceleracion += delta*(0.05)
 			
 			elif path_follow_2d.progress_ratio > 0.8:
 				path_follow_2d.progress_ratio += velocidad
-				aceleracion -= delta*(0.05)
 			
 			else:
 				path_follow_2d.progress_ratio += velocidad
