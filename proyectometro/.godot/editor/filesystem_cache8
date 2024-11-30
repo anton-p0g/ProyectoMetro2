@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1732927662
+::res://::1732926547
 cup-of-coffee-fade.mp3::AudioStreamMP3::3034913300261915697::1732832452::1732835213::1::::<><>::
-export_presets.cfg::TextFile::-1::1732927114::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1732922713::0::1::::<><>::
 falling-down-fade.mp3::AudioStreamMP3::1288688380986235552::1732832452::1732835213::1::::<><>::
 icon.svg::CompressedTexture2D::3452704895770316809::1732051182::1732835213::1::::<><>::
 README.md::TextFile::-1::1732834821::0::1::::<><>::
@@ -100,8 +100,8 @@ map.png::CompressedTexture2D::4237937495766955927::1732051182::1732835213::1::::
 metro.png::CompressedTexture2D::1208294377664411239::1732832138::1732835213::1::::<><>::
 personaje.png::CompressedTexture2D::8956756699870996112::1732832138::1732835213::1::::<><>::
 transbordo3.png::CompressedTexture2D::6757165982153051946::1732051182::1732835213::1::::<><>::
-::res://Assets/Shaders/::1732927649
-blur.gdshader::Shader::-1::1732927649::0::1::::<><>::
+::res://Assets/Shaders/::1732926547
+blur.gdshader::Shader::-1::1732926547::0::1::::<><>::
 ::res://Assets/Sprites/::1732908881
 bienvenido.png::CompressedTexture2D::3445705128268706874::1732834821::1732908881::1::::<><>::
 FlechaDestino.png::CompressedTexture2D::8344218742557395282::1732832452::1732835213::1::::<><>::
@@ -131,17 +131,18 @@ characters menu.png::CompressedTexture2D::264150067077034097::1732051182::173283
 ::res://Assets/TileSet/::1732835213
 MenuGris.png::CompressedTexture2D::6445717719890492572::1732051182::1732835213::1::::<><>::
 MenuRed.png::CompressedTexture2D::3225224833593565162::1732051182::1732835213::1::::<><>::
-::res://Personaje/::1732926559
+::res://Personaje/::1732926547
 character-female-b.glb::PackedScene::4397487524572130036::1732834821::1732926548::1::::<><>::uid://cch2qf8vjg3xc::::res://Personaje/Textures/colormap.png
 character-male-d.glb::PackedScene::3556497623038392781::1732834821::1732926548::1::::<><>::uid://cch2qf8vjg3xc::::res://Personaje/Textures/colormap.png
 wheelchair-deluxe.glb::PackedScene::2029202837064702372::1732834821::1732926548::1::::<><>::uid://cch2qf8vjg3xc::::res://Personaje/Textures/colormap.png
-::res://Personaje/Textures/::1732926548
+::res://Personaje/GLB format/::1732926547
+::res://Personaje/Textures/::1732835395
 colormap.png::CompressedTexture2D::4929337945009594528::1732834821::1732926548::1::::<><>::
-::res://Scenes/::1732927633
+::res://Scenes/::1732926547
 animacion_metro.tscn::PackedScene::-1::1732832138::0::1::::<><>::
 cartel_bienvenido.tscn::PackedScene::7453726021973094232::1732835138::0::1::::<><>::uid://bnimubqauckp7::::res://Assets/Sprites/bienvenido.png
-estacion_entrada.tscn::PackedScene::1933510630469432499::1732927633::0::1::::<><>::uid://csxw040ak41ya::::res://Assets/Estacion_animacion/tren/Textures/colormap.png<>res://Scripts/ejecucion_animacion_entrada.gd<>uid://tfrpppracvb0::::res://Assets/Estacion_animacion/tren/Textures/railroad-straight.fbx<>uid://ch5t6a5xg4jkc::::res://Assets/Estacion_animacion/tren/FBX format/train-electric-square-b.fbx<>uid://cdptsmngssoyy::::res://Assets/Estacion_animacion/tren/FBX format/train-electric-square-c.fbx<>uid://dcx6xpmm1j7jk::::res://Assets/Estacion_animacion/escalera/stairs-sides.fbx<>uid://dbubgd0h6csnl::::res://Assets/Estacion_animacion/estacion/FBX format/structure-wall.fbx<>uid://b83s0tw8hbxc6::::res://Assets/Estacion_animacion/estacion/FBX format/floor-large.fbx<>uid://w3u73luij4ps::::res://Assets/Estacion_animacion/estacion/FBX format/structure-yellow-medium.fbx<>uid://bqw184wihy6t2::::res://Personaje/character-male-d.glb<>res://Scripts/animacion_persona.gd<>res://Scripts/movimiento_hombre.gd<>uid://cw3ohe2tubjsc::::res://Assets/Estacion_animacion/estacion/FBX format/structure-doorway-wide.fbx<>uid://vlnliqa0uftg::::res://Assets/Estacion_animacion/estacion/FBX format/door.fbx<>uid://cnlhkbyk1r8kw::::res://Assets/Estacion_animacion/estacion/FBX format/box-long.fbx<>uid://dxaij82u5g1cw::::res://Assets/Estacion_animacion/estacion/FBX format/structure-medium.fbx<>uid://cy18s4hv1s58j::::res://Assets/Estacion_animacion/estacion/FBX format/door-wide-closed.fbx<>uid://dpjfvdmusalpw::::res://Assets/Estacion_animacion/estacion/FBX format/logo.tscn<>uid://cprig7hhmvll2::::res://Assets/Estacion_animacion/estacion/FBX format/tunel.tscn<>uid://degv1qbjajaqq::::res://Scenes/cartel_bienvenido.tscn<>uid://coafnnpnubcva::::res://Scenes/mapa_transporte.tscn<>uid://b3wf8hp6nspuq::::res://Personaje/character-female-b.glb<>res://Scripts/npc.gd<>uid://357w6o733aae::::res://Personaje/wheelchair-deluxe.glb<>res://Scripts/minusvalido.gd<>res://Scripts/bully.gd
-estacion_salida.tscn::PackedScene::6686239348404866995::1732927633::0::1::::<><>::res://Scripts/ejecucion_animacion_salida.gd<>uid://w3u73luij4ps::::res://Assets/Estacion_animacion/estacion/FBX format/structure-yellow-medium.fbx<>uid://dcx6xpmm1j7jk::::res://Assets/Estacion_animacion/escalera/stairs-sides.fbx<>uid://b83s0tw8hbxc6::::res://Assets/Estacion_animacion/estacion/FBX format/floor-large.fbx<>uid://dbubgd0h6csnl::::res://Assets/Estacion_animacion/estacion/FBX format/structure-wall.fbx<>uid://csxw040ak41ya::::res://Assets/Estacion_animacion/tren/Textures/colormap.png<>uid://tfrpppracvb0::::res://Assets/Estacion_animacion/tren/Textures/railroad-straight.fbx<>uid://ch5t6a5xg4jkc::::res://Assets/Estacion_animacion/tren/FBX format/train-electric-square-b.fbx<>uid://cdptsmngssoyy::::res://Assets/Estacion_animacion/tren/FBX format/train-electric-square-c.fbx<>res://Scripts/animacion_persona.gd<>uid://bqw184wihy6t2::::res://Personaje/character-male-d.glb<>res://Scripts/movimiento_hombre.gd<>uid://vlnliqa0uftg::::res://Assets/Estacion_animacion/estacion/FBX format/door.fbx<>uid://cnlhkbyk1r8kw::::res://Assets/Estacion_animacion/estacion/FBX format/box-long.fbx<>uid://dxaij82u5g1cw::::res://Assets/Estacion_animacion/estacion/FBX format/structure-medium.fbx<>uid://cy18s4hv1s58j::::res://Assets/Estacion_animacion/estacion/FBX format/door-wide-closed.fbx<>uid://dpjfvdmusalpw::::res://Assets/Estacion_animacion/estacion/FBX format/logo.tscn<>uid://cw3ohe2tubjsc::::res://Assets/Estacion_animacion/estacion/FBX format/structure-doorway-wide.fbx<>uid://cprig7hhmvll2::::res://Assets/Estacion_animacion/estacion/FBX format/tunel.tscn<>uid://degv1qbjajaqq::::res://Scenes/cartel_bienvenido.tscn<>uid://coafnnpnubcva::::res://Scenes/mapa_transporte.tscn<>uid://b3wf8hp6nspuq::::res://Personaje/character-female-b.glb<>res://Scripts/npc.gd<>uid://357w6o733aae::::res://Personaje/wheelchair-deluxe.glb<>res://Scripts/minusvalido.gd<>res://Scripts/bully.gd
+estacion_entrada.tscn::PackedScene::1933510630469432499::1732926547::0::1::::<><>::uid://csxw040ak41ya::::res://Assets/Estacion_animacion/tren/Textures/colormap.png<>res://Scripts/ejecucion_animacion_entrada.gd<>uid://tfrpppracvb0::::res://Assets/Estacion_animacion/tren/Textures/railroad-straight.fbx<>uid://ch5t6a5xg4jkc::::res://Assets/Estacion_animacion/tren/FBX format/train-electric-square-b.fbx<>uid://cdptsmngssoyy::::res://Assets/Estacion_animacion/tren/FBX format/train-electric-square-c.fbx<>uid://dcx6xpmm1j7jk::::res://Assets/Estacion_animacion/escalera/stairs-sides.fbx<>uid://dbubgd0h6csnl::::res://Assets/Estacion_animacion/estacion/FBX format/structure-wall.fbx<>uid://b83s0tw8hbxc6::::res://Assets/Estacion_animacion/estacion/FBX format/floor-large.fbx<>uid://w3u73luij4ps::::res://Assets/Estacion_animacion/estacion/FBX format/structure-yellow-medium.fbx<>uid://bqw184wihy6t2::::res://Personaje/character-male-d.glb<>res://Scripts/animacion_persona.gd<>res://Scripts/movimiento_hombre.gd<>uid://cw3ohe2tubjsc::::res://Assets/Estacion_animacion/estacion/FBX format/structure-doorway-wide.fbx<>uid://vlnliqa0uftg::::res://Assets/Estacion_animacion/estacion/FBX format/door.fbx<>uid://cnlhkbyk1r8kw::::res://Assets/Estacion_animacion/estacion/FBX format/box-long.fbx<>uid://dxaij82u5g1cw::::res://Assets/Estacion_animacion/estacion/FBX format/structure-medium.fbx<>uid://cy18s4hv1s58j::::res://Assets/Estacion_animacion/estacion/FBX format/door-wide-closed.fbx<>uid://dpjfvdmusalpw::::res://Assets/Estacion_animacion/estacion/FBX format/logo.tscn<>uid://cprig7hhmvll2::::res://Assets/Estacion_animacion/estacion/FBX format/tunel.tscn<>uid://degv1qbjajaqq::::res://Scenes/cartel_bienvenido.tscn<>uid://coafnnpnubcva::::res://Scenes/mapa_transporte.tscn<>uid://b3wf8hp6nspuq::::res://Personaje/character-female-b.glb<>res://Scripts/npc.gd<>uid://357w6o733aae::::res://Personaje/wheelchair-deluxe.glb<>res://Scripts/minusvalido.gd<>res://Scripts/bully.gd
+estacion_salida.tscn::PackedScene::6686239348404866995::1732926547::0::1::::<><>::res://Scripts/ejecucion_animacion_salida.gd<>uid://w3u73luij4ps::::res://Assets/Estacion_animacion/estacion/FBX format/structure-yellow-medium.fbx<>uid://dcx6xpmm1j7jk::::res://Assets/Estacion_animacion/escalera/stairs-sides.fbx<>uid://b83s0tw8hbxc6::::res://Assets/Estacion_animacion/estacion/FBX format/floor-large.fbx<>uid://dbubgd0h6csnl::::res://Assets/Estacion_animacion/estacion/FBX format/structure-wall.fbx<>uid://csxw040ak41ya::::res://Assets/Estacion_animacion/tren/Textures/colormap.png<>uid://tfrpppracvb0::::res://Assets/Estacion_animacion/tren/Textures/railroad-straight.fbx<>uid://ch5t6a5xg4jkc::::res://Assets/Estacion_animacion/tren/FBX format/train-electric-square-b.fbx<>uid://cdptsmngssoyy::::res://Assets/Estacion_animacion/tren/FBX format/train-electric-square-c.fbx<>res://Scripts/animacion_persona.gd<>uid://bqw184wihy6t2::::res://Personaje/character-male-d.glb<>res://Scripts/movimiento_hombre.gd<>uid://vlnliqa0uftg::::res://Assets/Estacion_animacion/estacion/FBX format/door.fbx<>uid://cnlhkbyk1r8kw::::res://Assets/Estacion_animacion/estacion/FBX format/box-long.fbx<>uid://dxaij82u5g1cw::::res://Assets/Estacion_animacion/estacion/FBX format/structure-medium.fbx<>uid://cy18s4hv1s58j::::res://Assets/Estacion_animacion/estacion/FBX format/door-wide-closed.fbx<>uid://dpjfvdmusalpw::::res://Assets/Estacion_animacion/estacion/FBX format/logo.tscn<>uid://cw3ohe2tubjsc::::res://Assets/Estacion_animacion/estacion/FBX format/structure-doorway-wide.fbx<>uid://cprig7hhmvll2::::res://Assets/Estacion_animacion/estacion/FBX format/tunel.tscn<>uid://degv1qbjajaqq::::res://Scenes/cartel_bienvenido.tscn<>uid://coafnnpnubcva::::res://Scenes/mapa_transporte.tscn<>uid://b3wf8hp6nspuq::::res://Personaje/character-female-b.glb<>res://Scripts/npc.gd<>uid://357w6o733aae::::res://Personaje/wheelchair-deluxe.glb<>res://Scripts/minusvalido.gd<>res://Scripts/bully.gd
 mapa.tscn::PackedScene::9103281523041297685::1732920376::0::1::::<><>::uid://b1m5hgmjg7qn4::::res://Assets/routes/map.png<>uid://dmh5cvmnge2it::::res://Scenes/Gui/mapa/estación.tscn<>uid://dimqkv6emw57i::::res://Assets/routes/lineaA.jpeg<>uid://drgafcl8emknt::::res://Assets/routes/lineaD.jpeg<>uid://cq8nusa8ravxi::::res://Assets/routes/lineaB.png<>uid://yf5fwu8l6w3::::res://Assets/routes/lineaC.jpeg<>uid://bsr0w6ytalsbw::::res://Assets/routes/lineaE.jpeg<>uid://wl5vxq4jtsu::::res://Assets/routes/gris.jpg<>uid://c3jhsigjindeo::::res://Assets/routes/transbordo3.png
 mapa_definitivo.tscn::PackedScene::5110608300640564337::1732920375::0::1::::<><>::uid://b1m5hgmjg7qn4::::res://Assets/routes/map.png<>uid://dmh5cvmnge2it::::res://Scenes/Gui/mapa/estación.tscn<>uid://wl5vxq4jtsu::::res://Assets/routes/gris.jpg<>uid://bsr0w6ytalsbw::::res://Assets/routes/lineaE.jpeg<>uid://c3jhsigjindeo::::res://Assets/routes/transbordo3.png<>uid://drgafcl8emknt::::res://Assets/routes/lineaD.jpeg<>uid://yf5fwu8l6w3::::res://Assets/routes/lineaC.jpeg<>uid://cq8nusa8ravxi::::res://Assets/routes/lineaB.png<>uid://dimqkv6emw57i::::res://Assets/routes/lineaA.jpeg<>res://Scripts/animacion_tren.gd<>uid://rhkoxicibq76::::res://Assets/routes/metro.png<>uid://b630qf5124kcm::::res://Scenes/personaje_trans.tscn
 mapa_transporte.tscn::PackedScene::5755812685196299130::1732835139::0::1::::<><>::uid://b3jewctw1dr3o::::res://Assets/Sprites/mapa_transportes.png
@@ -156,11 +157,11 @@ Test.tscn::PackedScene::2596611014884358434::1732363227::0::1::::<><>::res://Sce
 ::res://Scenes/Gui/mapa/::1732378971
 estación.tscn::PackedScene::8017805022511787183::1732051182::0::1::::<><>::uid://cga334rxk382v::::res://Assets/routes/estacion.png
 mapa.tscn::PackedScene::3925246167019541714::1732363474::0::1::::<><>::uid://b1m5hgmjg7qn4::::res://Assets/routes/map.png<>uid://dmh5cvmnge2it::::res://Scenes/Gui/mapa/estación.tscn<>uid://dimqkv6emw57i::::res://Assets/routes/lineaA.jpeg<>uid://drgafcl8emknt::::res://Assets/routes/lineaD.jpeg<>uid://cq8nusa8ravxi::::res://Assets/routes/lineaB.png<>uid://yf5fwu8l6w3::::res://Assets/routes/lineaC.jpeg<>uid://bsr0w6ytalsbw::::res://Assets/routes/lineaE.jpeg
-::res://Scenes/Gui/Transition/::1732927649
-diamond.gdshader::Shader::-1::1732927649::0::1::::<><>::
-transition.gd::GDScript::-1::1732926921::0::1::::<>CanvasLayer<>::
+::res://Scenes/Gui/Transition/::1732926547
+diamond.gdshader::Shader::-1::1732926547::0::1::::<><>::
+transition.gd::GDScript::-1::1732915710::0::1::::<>CanvasLayer<>::
 Transition.tscn::PackedScene::2122875642043150302::1732832361::0::1::::<><>::res://Scenes/Gui/Transition/transition.gd<>res://Scenes/Gui/Transition/diamond.gdshader
-::res://Scripts/::1732926921
+::res://Scripts/::1732920375
 animacion_persona.gd::GDScript::-1::1732916794::0::1::::<>PathFollow3D<>::
 animacion_tren.gd::GDScript::-1::1732835199::0::1::::<>Node2D<>::
 bully.gd::GDScript::-1::1732834821::0::1::::<>Node3D<>::
@@ -170,18 +171,18 @@ GlobalData.gd::GDScript::-1::1732915153::0::1::::<>Node<>::
 minusvalido.gd::GDScript::-1::1732834821::0::1::::<>Node3D<>::
 movimiento_hombre.gd::GDScript::-1::1732834821::0::1::::<>Node3D<>::
 npc.gd::GDScript::-1::1732834821::0::1::::<>Node3D<>::
-python_call.gd::GDScript::-1::1732926921::0::1::::<>Node<>::
+python_call.gd::GDScript::-1::1732920375::0::1::::<>Node<>::
 seleccionar_hora.gd::GDScript::-1::1732832452::0::1::::<>VBoxContainer<>::
 transition.gd::GDScript::-1::1732051182::0::1::::<>CanvasLayer<>::
-::res://Scripts/Gui/::1732926921
-custom_cursor.gd::GDScript::-1::1732926921::0::1::::<>Control<>::
+::res://Scripts/Gui/::1732922386
+custom_cursor.gd::GDScript::-1::1732835199::0::1::::<>Control<>::
 hover.gd::GDScript::-1::1732832452::0::1::::<>Control<>::
 join_menu_screen.gd::GDScript::-1::1732051182::0::1::::<>Control<>::
-lista_estaciones.gd::GDScript::-1::1732926921::0::1::::<>Node<>::
-mostrar_estaciones_origen_destino.gd::GDScript::-1::1732926921::0::1::::<>Node<>::
+lista_estaciones.gd::GDScript::-1::1732051182::0::1::::<>Node<>::
+mostrar_estaciones_origen_destino.gd::GDScript::-1::1732922386::0::1::::<>Node<>::
 mostrar_mas_info.gd::GDScript::-1::1732363939::0::1::::<>Window<>::
 nodo_menu.gd::GDScript::-1::1732915931::0::1::::<>Control<>::
-nodo_seleccion.gd::GDScript::-1::1732926921::0::1::::<>Control<>::
+nodo_seleccion.gd::GDScript::-1::1732832452::0::1::::<>Control<>::
 RoutePopup.gd::GDScript::-1::1732832452::0::1::::<>Window<>::
 start_menu.gd::GDScript::-1::1732915915::0::1::::<>Control<>::
 ::res://Scripts/Rutas/::1732832452

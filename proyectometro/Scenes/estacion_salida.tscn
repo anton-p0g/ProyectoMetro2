@@ -57,7 +57,7 @@ _data = {
 point_count = 5
 
 [node name="Node3D" type="Node3D"]
-transform = Transform3D(1, 0.000521904, 0.000510245, -0.000522107, 1, 0.000374246, -0.000510037, -0.000374529, 1, 50.4089, -0.0849643, 94.812)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.4089, -0.0849643, 94.812)
 script = ExtResource("1_mgwq2")
 
 [node name="vallas" type="Node3D" parent="."]
@@ -682,31 +682,4 @@ transform = Transform3D(8.88396, 0, 0, 0, 1, 0, 0, 0, 5.27854, -53.4678, 6.04922
 transform = Transform3D(23.2568, 0, 0, 0, 1, 0, 0, 0, 3.61884, -52.1084, 6.04922, -91.2623)
 
 [node name="floor-large184" parent="suelo/-1" instance=ExtResource("4_ewdj7")]
-transform = Transform3D(20.4801, 0, 0, 0, 1, 0, 0, 0, 16.7821, -57.4544, 5.93795, -120.353)
-
-[node name="1" type="Node3D" parent="."]
-transform = Transform3D(-1, -8.74187e-08, 0, 8.68681e-08, -1, -2.91038e-10, 5.82077e-10, 0, 1, -105.272, 24.4423, 0.3386)
-
-[node name="floor-large148" parent="1" instance=ExtResource("4_ewdj7")]
-transform = Transform3D(32.7211, 0, 0, 0, 1, 0, 0, 0, 53.8277, -50.1881, 11.9967, -69.7957)
-
-[node name="floor-large2" parent="1" instance=ExtResource("4_ewdj7")]
-transform = Transform3D(-5.45149e-07, 0, 31.996, 0, 1, 0, -12.4715, 0, -1.39859e-06, -51.1588, 12.0525, -144.242)
-
-[node name="floor-large61" parent="1" instance=ExtResource("4_ewdj7")]
-transform = Transform3D(14.0989, 0, 0, 0, 1, 0, 0, 0, 6.168, -33.1767, 11.9946, -127.086)
-
-[node name="floor-large62" parent="1" instance=ExtResource("4_ewdj7")]
-transform = Transform3D(12.0842, 0, 0, 0, 1, 0, 0, 0, 7.02789, -70.6506, 12.1676, -128.73)
-
-[node name="-1" type="Node3D" parent="."]
-transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, -107.152, 11.7409, 0.715706)
-
-[node name="floor-large121" parent="-1" instance=ExtResource("4_ewdj7")]
-transform = Transform3D(8.88396, 0, 0, 0, 1, 0, 0, 0, 5.27854, -53.4678, 6.04922, -99.6508)
-
-[node name="floor-large91" parent="-1" instance=ExtResource("4_ewdj7")]
-transform = Transform3D(23.2568, 0, 0, 0, 1, 0, 0, 0, 3.61884, -52.1084, 6.04922, -91.2623)
-
-[node name="floor-large184" parent="-1" instance=ExtResource("4_ewdj7")]
 transform = Transform3D(20.4801, 0, 0, 0, 1, 0, 0, 0, 16.7821, -57.4544, 5.93795, -120.353)
