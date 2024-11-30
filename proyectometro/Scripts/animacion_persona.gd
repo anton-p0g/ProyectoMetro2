@@ -12,7 +12,7 @@ var empezar = 0
 func _process(delta: float) -> void:
 	if empezar == 0:
 		
-		progress_ratio += delta*(0.10)
+		progress_ratio += delta*(0.80)
 		
 	if progress_ratio >= 97:
 		empezar = 1
