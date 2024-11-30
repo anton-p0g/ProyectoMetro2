@@ -1,0 +1,105 @@
+[gd_scene load_steps=15 format=3 uid="uid://r3xr4yqrlluq"]
+
+[ext_resource type="Texture2D" uid="uid://d07rpbolrkpt" path="res://Assets/Sprites/SelectCharacter/characters menu.png" id="1_w8fin"]
+[ext_resource type="FontFile" uid="uid://b0emhowcce23p" path="res://Assets/Fonts/Roboto_Slab/static/RobotoSlab-ExtraBold.ttf" id="2_v0xnk"]
+[ext_resource type="Texture2D" uid="uid://cnnw1tgr5p1rl" path="res://Assets/Sprites/Buttons/button_rectangle.png" id="3_x24af"]
+[ext_resource type="Texture2D" uid="uid://cy52fy0vy8rpr" path="res://Assets/Sprites/Buttons/panel_rectangle_screws.png" id="4_qcglo"]
+[ext_resource type="Texture2D" uid="uid://cm4ag881lmh61" path="res://Assets/Sprites/Buttons/button_rectangle_depth.png" id="5_pbgwy"]
+[ext_resource type="Texture2D" uid="uid://b4uboswskfatp" path="res://Assets/Sprites/Subte-logo.svg" id="6_ogg6i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ld5kx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aegu1"]
+texture = ExtResource("3_x24af")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f7na1"]
+texture = ExtResource("4_qcglo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u1stl"]
+texture = ExtResource("5_pbgwy")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uxroh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_db0hr"]
+texture = ExtResource("3_x24af")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mqobc"]
+texture = ExtResource("4_qcglo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0yjdt"]
+texture = ExtResource("5_pbgwy")
+
+[node name="ChooseCharacter" type="Control"]
+layout_mode = 3
+anchor_right = 1.184
+anchor_bottom = 1.154
+offset_top = -2.0
+offset_right = 0.0319824
+offset_bottom = -1.79205
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CustomCursor" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 16.0
+offset_bottom = 19.0
+mouse_default_cursor_shape = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -4.0
+offset_right = 1347.0
+offset_bottom = 742.0
+texture = ExtResource("1_w8fin")
+
+[node name="Male" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.687
+anchor_top = 0.788
+anchor_right = 0.687
+anchor_bottom = 0.788
+offset_left = -167.389
+offset_top = -40.848
+offset_right = 168.611
+offset_bottom = 41.152
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_v0xnk")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ld5kx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_aegu1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f7na1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_u1stl")
+text = "Select
+"
+
+[node name="Button" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.289
+anchor_top = 0.789
+anchor_right = 0.289
+anchor_bottom = 0.789
+offset_left = -170.283
+offset_top = -40.5941
+offset_right = 170.717
+offset_bottom = 40.4059
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_v0xnk")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uxroh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_db0hr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mqobc")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0yjdt")
+text = "Select"
+
+[node name="Subte-logo" type="Sprite2D" parent="TextureRect"]
+position = Vector2(662, 697)
+scale = Vector2(0.156388, 0.15859)
+texture = ExtResource("6_ogg6i")

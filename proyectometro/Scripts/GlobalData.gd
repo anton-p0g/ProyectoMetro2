@@ -8,7 +8,6 @@ var grouped_path = []
 var transfers = []
 var selected_hour = 0
 var selected_minute = 0
-var animaciones = false
 
 func clear():
 	path = []

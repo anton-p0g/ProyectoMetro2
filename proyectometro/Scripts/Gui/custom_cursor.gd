@@ -18,6 +18,7 @@ func _input(event) -> void:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed() and Input.get_current_cursor_shape() == 2:
 			Input.set_custom_mouse_cursor(_grab, Input.CURSOR_POINTING_HAND)
 			await get_tree().create_timer(0.3).timeout
+			print("Boton presionado")
 			Input.set_custom_mouse_cursor(_point, Input.CURSOR_POINTING_HAND)
 			
 

@@ -123,6 +123,8 @@ func _on_button_pressed():
 	for node in target_nodes:
 		if node:
 			node.visible = false
+		else:
+			print("Node not found")
 
 func desocultar(lista_aristas):
 	for arista in lista_aristas:
@@ -179,8 +181,9 @@ func _button_combined():
 			var resultado = crear_animacion(lista_animacion_train)
 			ejecucion_animacion = true
 			animar_tren(resultado[0], resultado[1])
-
+			
 	_show_button_mas_info()
+	print(GlobalData.grouped_path[0])
 	var start_station = GlobalData.grouped_path[0]["stations"][0]
 	var final_station = GlobalData.grouped_path[-1]["stations"][-1]
 	popup2.populate_popup(start_station, GlobalData.grouped_path, final_station, GlobalData.transfers)
