@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dimqkv6emw57i" path="res://Assets/routes/lineaA.jpeg" id="10_3b155"]
 [ext_resource type="Script" path="res://Scripts/animacion_tren.gd" id="11_c1fae"]
 [ext_resource type="Texture2D" uid="uid://rhkoxicibq76" path="res://Assets/routes/metro.png" id="12_mhnjr"]
-[ext_resource type="PackedScene" uid="uid://b630qf5124kcm" path="res://Scenes/personaje_trans.tscn" id="13_w1tlk"]
+[ext_resource type="PackedScene" path="res://Scenes/personaje_trans.tscn" id="13_w1tlk"]
 
 [sub_resource type="Curve2D" id="Curve2D_y3u1r"]
 _data = {

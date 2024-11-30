@@ -25,7 +25,7 @@ func load_scene() -> void:
 	loaded.emit()
 
 func _on_start_pressed() -> void:
-	Transition.transition_to("res://Scenes/estacion_entrada.tscn")
+	Transition.transition_to("res://Scenes/SeleccionEstaciones.tscn")
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
