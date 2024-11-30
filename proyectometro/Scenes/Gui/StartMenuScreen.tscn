@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://boxxmumjmhxmd"]
+[gd_scene load_steps=28 format=4 uid="uid://boxxmumjmhxmd"]
 
 [ext_resource type="Script" path="res://Scripts/Gui/start_menu.gd" id="1_5erdi"]
 [ext_resource type="Script" path="res://Scripts/Gui/custom_cursor.gd" id="2_exbkt"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://cm4ag881lmh61" path="res://Assets/Sprites/Buttons/button_rectangle_depth.png" id="5_dx0h8"]
 [ext_resource type="Texture2D" uid="uid://c02t5efr43iac" path="res://Assets/Sprites/GUI/startmenu.png" id="5_fys2w"]
 [ext_resource type="Texture2D" uid="uid://cy52fy0vy8rpr" path="res://Assets/Sprites/Buttons/panel_rectangle_screws.png" id="5_nwu68"]
-[ext_resource type="FontFile" uid="uid://bltyoa2go71vk" path="res://Assets/Fonts/Roboto_Slab/static/RobotoSlab-SemiBold.ttf" id="10_1ydhc"]
 [ext_resource type="AudioStream" uid="uid://bjietw6hnsp1b" path="res://cup-of-coffee-fade.mp3" id="12_vmuoy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c6o82"]
@@ -1237,34 +1236,6 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_dx6ik")
 theme_override_styles/normal = SubResource("StyleBoxTexture_usyjg")
 text = "Exit"
 
-[node name="CheckButton" type="CheckButton" parent="Menu"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.171
-anchor_top = 0.757
-anchor_right = 0.646
-anchor_bottom = 0.851
-offset_left = 0.0719986
-offset_top = -0.136017
-offset_right = -18.728
-offset_bottom = -11.248
-scale = Vector2(1.12, 1.36)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("10_1ydhc")
-text = "Animación 3D"
-
 [node name="StartScreen" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -1328,5 +1299,3 @@ parameters/looping = true
 
 [connection signal="pressed" from="Menu/MenuButton/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Menu/MenuButton/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="Menu/CheckButton" to="." method="_on_check_button_pressed"]
-[connection signal="toggled" from="Menu/CheckButton" to="." method="_on_check_button_toggled"]

@@ -35,13 +35,12 @@ albedo_texture = ExtResource("1_1x3kc")
 [sub_resource type="BoxMesh" id="BoxMesh_li0et"]
 
 [sub_resource type="Curve3D" id="Curve3D_mski3"]
-bake_interval = 3.0
+bake_interval = 359.79
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.11872, 0.0757127, -1.54348, 0, 0, 0, 0, 0, 0, 0.336154, 0.167334, 3.86414, 0, 0, 0, 0, 0, 0, 0.377988, -0.646065, 5.048, 0, 0, 0, 0, 0, 0, 0.235905, -2.79084, 8.52667, 0, 0, 0, 0, 0, 0, 0.678066, -2.78682, 10.8648, 0, 0, 0, 0, 0, 0, 0.625422, -2.89453, 13.2916, 0, 0, 0, 0, 0, 0, -0.680164, -2.92736, 14.3068, 0, 0, 0, 0, 0, 0, -2.63752, -2.86603, 15.0212, 0, 0, 0, 0, 0, 0, -4.28769, -2.88451, 15.6088, 0, 0, 0, 0, 0, 0, -4.98973, -2.88847, 16.3032, 0, 0, 0, 0, 0, 0, -5.03277, -2.86804, 17.481, 0, 0, 0, 0, 0, 0, -5.11583, -5.02687, 21.3597, 0, 0, 0, 0, 0, 0, -4.39891, -5.07067, 24.0266, 0, 0, 0, 0, 0, 0, -1.25529, -5.3943, 25.3955, 0, 0, 0, 0, 0, 0, 0.0963559, -4.33256, 25.4661, 0, 0, 0, 0, 0, 0, 0.56036, -6.04253, 25.4809),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 16
-up_vector_enabled = false
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lc3tf"]
 
@@ -9330,7 +9329,7 @@ rotation_order = 0
 curve = SubResource("Curve3D_mski3")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.989616, 0.00240116, 0.143196, 1.16407e-10, 0.99981, -0.0167651, -0.143213, -0.0165923, -0.989503, 1.11872, 0.0757127, -1.54348)
+transform = Transform3D(-0.989616, 0.00240116, 0.143196, 0, 0.99981, -0.0167652, -0.143213, -0.0165923, -0.989503, 1.11872, 0.0757127, -1.54348)
 loop = false
 script = ExtResource("9_p4x4v")
 
@@ -9674,7 +9673,7 @@ rotation_order = 0
 curve = SubResource("Curve3D_o4b2d")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
-transform = Transform3D(0.988922, 0.0748705, 0.127485, -1.48999e-08, 0.862239, -0.50638, -0.147841, 0.500816, 0.85276, 5.70461, -3.59408, 18.6224)
+transform = Transform3D(0.988922, 0.0748726, 0.12749, -3.72497e-09, 0.862241, -0.506378, -0.147846, 0.500813, 0.852761, 5.70461, -3.59408, 18.6224)
 loop = false
 script = ExtResource("9_p4x4v")
 

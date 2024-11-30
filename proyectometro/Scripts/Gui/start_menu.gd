@@ -1,13 +1,9 @@
 extends Control
 
-@onready var check_button: CheckButton = $Menu/CheckButton
-
 signal loaded
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Menu.visible = false
-
 
 
 func _input(event) -> void:
@@ -29,18 +25,7 @@ func load_scene() -> void:
 	loaded.emit()
 
 func _on_start_pressed() -> void:
-	if GlobalData.animaciones:
-		Transition.transition_to("res://Scenes/estacion_entrada.tscn")
-	else:
-		Transition.transition_to("res://Scenes/SeleccionEstaciones.tscn")
+	Transition.transition_to("res://Scenes/estacion_entrada.tscn")
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
-
-
-func _on_check_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		GlobalData.animaciones = true
-	else:
-		GlobalData.animaciones = false
-		
