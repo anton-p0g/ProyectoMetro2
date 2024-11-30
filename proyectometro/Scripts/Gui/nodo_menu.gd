@@ -2,8 +2,12 @@ extends Control
 
 @onready var menu = $Filtro_Clicks
 @onready var animationPlayer = $AnimationPlayer
+@onready var popup = $"../RoutePopup"
 
 func _on_button_pressed() -> void:
+	if popup.visible == true:
+		popup.visible = false
+		
 	if menu.visible == true:
 		animationPlayer.play_backwards("show_menu")
 		await animationPlayer.animation_finished

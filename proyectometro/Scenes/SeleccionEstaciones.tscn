@@ -33,7 +33,7 @@
 [ext_resource type="Script" path="res://Scripts/animacion_tren.gd" id="27_rrpry"]
 [ext_resource type="Texture2D" uid="uid://c02t5efr43iac" path="res://Assets/Sprites/GUI/startmenu.png" id="28_ity0s"]
 [ext_resource type="Texture2D" uid="uid://rhkoxicibq76" path="res://Assets/routes/metro.png" id="28_ryoil"]
-[ext_resource type="PackedScene" path="res://Scenes/personaje_trans.tscn" id="29_xtlw1"]
+[ext_resource type="PackedScene" uid="uid://b630qf5124kcm" path="res://Scenes/personaje_trans.tscn" id="29_xtlw1"]
 [ext_resource type="Script" path="res://Scripts/Gui/nodo_seleccion.gd" id="31_0n1sa"]
 [ext_resource type="Script" path="res://Scripts/Gui/RoutePopup.gd" id="31_384k5"]
 [ext_resource type="Texture2D" uid="uid://byd0pg512wvjx" path="res://Assets/Icons/menu.png" id="32_8a1ri"]
