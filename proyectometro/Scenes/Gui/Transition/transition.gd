@@ -27,6 +27,7 @@ func transition_to(scene: String) -> void:
 	
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	print("test")
 	if anim_name == "transition_in":
 		transitioned_in.emit()
 	elif anim_name == "transition_out":

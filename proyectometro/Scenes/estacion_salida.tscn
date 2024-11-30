@@ -657,7 +657,7 @@ transform = Transform3D(-1.05992, 0, -0.791723, 0, 1, 0, 72.3773, 0, -0.0115943,
 transform = Transform3D(32.7211, 0, 0, 0, 1, 0, 0, 0, 53.8277, -50.1881, 11.9967, -69.7957)
 
 [node name="floor-large2" parent="suelo/0" instance=ExtResource("4_ewdj7")]
-transform = Transform3D(-5.45149e-07, 0, 31.996, 0, 1, 0, -12.4715, 0, -1.39859e-06, -51.1588, 12.0525, -144.242)
+transform = Transform3D(-2.98418e-07, 0, 31.996, 0, 1, 0, -6.827, 0, -1.39859e-06, -51.1588, 12.0525, -138.747)
 
 [node name="floor-large61" parent="suelo/0" instance=ExtResource("4_ewdj7")]
 transform = Transform3D(14.0989, 0, 0, 0, 1, 0, 0, 0, 6.168, -33.1767, 11.9946, -127.086)

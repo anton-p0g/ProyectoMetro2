@@ -55,3 +55,5 @@ func _ready():
 		estaciones_origen.add_item("Independencia", 54)
 		estaciones_origen.add_item("Belgrano", 55)
 		estaciones_origen.add_item("Bolívar", 56)
+	else:
+		print("Error: No se encontró el nodo EstacionesOrigen.")

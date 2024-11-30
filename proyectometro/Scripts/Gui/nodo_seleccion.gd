@@ -72,7 +72,9 @@ func _on_lista_estaciones_destino_item_selected(index: int) -> void:
 	_establecer_flecha(id, 2)
 
 func _establecer_flecha(id: int, tipo: int) -> void:
+	print(id)
 	var nodo_estacion: Node2D = get_node_mapa(id)
+	print(nodo_estacion.name, nodo_estacion.global_position)
 	
 	var estacion_x = nodo_estacion.global_position.x
 	var estacion_y = nodo_estacion.global_position.y
@@ -117,6 +119,7 @@ func _input(event: InputEvent) -> void:
 	if en_estacion and modo_seleccion > 0:
 		if event is InputEventMouseButton:
 			if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+				print(ID_estacion)
 				var index = index_estaciones[ID_estacion]
 				
 				var id = selector_origen.get_item_id(index)
@@ -163,10 +166,13 @@ func _change_button_style() -> void:
 
 func _get_station_name(id) -> void:
 	ID_estacion = int(id)
+	print(ID_estacion)
 
 func _generate_index_dictionary() -> void:
 	for i in range(selector_origen.item_count):
 		var id = selector_origen.get_item_id(i)
 		if !selector_origen.is_item_disabled(i):
 			index_estaciones[id] = i
+	
+	print(index_estaciones)
 	
