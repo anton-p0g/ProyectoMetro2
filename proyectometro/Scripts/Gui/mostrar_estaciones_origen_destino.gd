@@ -181,7 +181,7 @@ func _button_combined():
 			var resultado = crear_animacion(lista_animacion_train)
 			ejecucion_animacion = true
 			animar_tren(resultado[0], resultado[1])
-
+			
 	_show_button_mas_info()
 	print(GlobalData.grouped_path[0])
 	var start_station = GlobalData.grouped_path[0]["stations"][0]

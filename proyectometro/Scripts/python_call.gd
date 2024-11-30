@@ -16,13 +16,13 @@ func get_python_path() -> String:
 	else:
 		print("Error: Unable to find Python executable.")
 		return ""
-
+	
 	
 func run_python_script(source_id, target_id, day, hour, minute):
 	var python_path = get_python_path()
 	if python_path == "":
 		return
-
+		
 	var output = []
 	var python_file = ProjectSettings.globalize_path("res://Scripts/backend.py")
 	var result = OS.execute(python_path, [python_file, str(source_id), str(target_id), str(day), str(hour), str(minute)], output, true, false)
